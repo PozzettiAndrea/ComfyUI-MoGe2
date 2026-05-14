@@ -1,0 +1,12 @@
+[project]
+name = "ComfyUI-MoGe2"
+description = "ComfyUI nodes for MoGe-2: monocular metric geometry estimation (depth, points, normals, intrinsics) from Microsoft Research (CVPR'25 Oral)."
+version = "0.1.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/PozzettiAndrea/ComfyUI-MoGe2"
+
+[tool.comfy]
+PublisherId = "pznodes"
+DisplayName = "MoGe-2"
