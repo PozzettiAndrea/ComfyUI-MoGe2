@@ -19,16 +19,19 @@ def _mm():
 
 
 def _colorize_depth_tensor(depth_np, valid_mask_np):
-    """Colorize a (H, W) numpy depth array to a (H, W, 3) RGB float32 image in [0, 1]."""
+    """Colorize a (H, W) numpy depth array to a (H, W, 3) RGB float32 image in [0, 1].
+
+    colorize_depth returns uint8 [0, 255]; ComfyUI wants float [0, 1].
+    """
     from .moge_pkg.utils.vis import colorize_depth
     rgb = colorize_depth(depth_np, mask=valid_mask_np)
-    return torch.from_numpy(rgb).float()
+    return torch.from_numpy(rgb).float() / 255.0
 
 
 def _colorize_normal_tensor(normal_np):
     from .moge_pkg.utils.vis import colorize_normal
     rgb = colorize_normal(normal_np)
-    return torch.from_numpy(rgb).float()
+    return torch.from_numpy(rgb).float() / 255.0
 
 
 def _to_image_batch(tensor_list):

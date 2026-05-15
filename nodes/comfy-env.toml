@@ -5,6 +5,13 @@ av = "*"
 packages = ["sageattention", "flash_attn"]
 
 [pypi-dependencies]
+# ComfyUI runtime deps that the isolation env needs to import comfy.utils /
+# comfy.model_management / comfy.ops from the host ComfyUI tree.
+safetensors = ">=0.4.0"
+psutil = "*"
+einops = "*"
+comfy-aimdo = "*"
+transformers = "*"
 huggingface_hub = "*"
 trimesh = ">=4.0"
 scipy = "*"

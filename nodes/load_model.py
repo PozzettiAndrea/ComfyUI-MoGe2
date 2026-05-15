@@ -61,6 +61,26 @@ def _get_moge_model_list():
 _MOGE_MODEL_CACHE = {}
 
 
+class MoGeWrapper(torch.nn.Module):
+    """Thin nn.Module wrapper around MoGeModel.
+
+    MoGeModel exposes ``device`` and ``dtype`` as read-only @property values, but
+    ComfyUI's ModelPatcher assigns ``model.device = ...`` during partial loads.
+    Wrapping moves the property behind ``self.moge.device`` (still readable as
+    a getter) and lets ComfyUI freely set ``self.device`` on the wrapper.
+    """
+
+    def __init__(self, model):
+        super().__init__()
+        self.moge = model
+
+    def forward(self, *args, **kwargs):
+        return self.moge(*args, **kwargs)
+
+    def infer(self, *args, **kwargs):
+        return self.moge.infer(*args, **kwargs)
+
+
 def _build_moge_model(model_path, version, dtype, attention):
     """Construct the MoGe model from a .pt checkpoint on disk."""
     if attention == "sage":
@@ -77,7 +97,7 @@ def _build_moge_model(model_path, version, dtype, attention):
     model = MoGeModel.from_pretrained(model_path)
     model.to(dtype=dtype)
     model.eval()
-    return model
+    return MoGeWrapper(model)
 
 
 def _get_or_build_moge_model(config):
@@ -96,7 +116,9 @@ def _get_or_build_moge_model(config):
         load_device=_mm().get_torch_device(),
         offload_device=_mm().unet_offload_device(),
     )
-    patcher.model_options["moge_capabilities"] = check_model_capabilities(model)
+    # Capabilities are read off the underlying MoGeModel (the wrapper has no heads).
+    inner = model.moge if hasattr(model, "moge") else model
+    patcher.model_options["moge_capabilities"] = check_model_capabilities(inner)
     patcher.model_options["moge_dtype"] = dtype
     patcher.model_options["moge_version"] = config["version"]
 
