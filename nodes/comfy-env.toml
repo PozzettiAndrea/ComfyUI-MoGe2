@@ -1,15 +1,3 @@
-# Isolation env for ComfyUI-MoGe2 inference.
-#
-# MoGe-2's hot path is a DINOv2-ViT encoder using F.scaled_dot_product_attention.
-# sageattention monkey-patches SDPA — drop-in 20-40% speedup on Ampere/Ada,
-# ~2x on Hopper. flash_attn is included for parity with DepthAnythingV3's
-# attention backend selector; PyTorch SDPA already dispatches to FA2 internally,
-# so the standalone wheel is mostly there if we want explicit
-# flash_attn.flash_attn_func calls.
-#
-# utils3d is a generically-named git package that we want kept off the host
-# venv — the main reason to isolate at all.
-
 [dependencies]
 av = "*"
 
