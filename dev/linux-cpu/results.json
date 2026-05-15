@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-05-15T11:13:25.807930+00:00",
+  "platform": "linux",
+  "hardware": {
+    "os": "Linux-6.17.0-1010-azure-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+  },
+  "commit_hash": "43f177e0e3de4aad7e28f605ad1ac924be0f3d52",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/25914724806",
+  "success": true,
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "workflows": [
+    {
+      "name": "simple",
+      "status": "pass",
+      "duration_seconds": 60.94,
+      "error": null,
+      "hardware": {
+        "os": "Linux-6.17.0-1010-azure-x86_64-with-glibc2.39",
+        "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+      },
+      "resources": {
+        "ram": {
+          "peak": 3.75,
+          "avg": 2.68
+        },
+        "total_ram_gb": 15.6,
+        "samples": 61
+      }
+    }
+  ]
+}
