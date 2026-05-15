@@ -11,10 +11,12 @@ import logging
 import os
 import warnings
 
+import comfy.ops
 import torch.nn.functional as F
 from torch import Tensor
 from torch import nn
 
+ops = comfy.ops.disable_weight_init
 
 logger = logging.getLogger("dinov2")
 
@@ -43,15 +45,18 @@ class Attention(nn.Module):
         proj_bias: bool = True,
         attn_drop: float = 0.0,
         proj_drop: float = 0.0,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         super().__init__()
         self.num_heads = num_heads
         head_dim = dim // num_heads
         self.scale = head_dim**-0.5
 
-        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
+        self.qkv = operations.Linear(dim, dim * 3, bias=qkv_bias, dtype=dtype, device=device)
         self.attn_drop = nn.Dropout(attn_drop)
-        self.proj = nn.Linear(dim, dim, bias=proj_bias)
+        self.proj = operations.Linear(dim, dim, bias=proj_bias, dtype=dtype, device=device)
         self.proj_drop = nn.Dropout(proj_drop)
 
     # # Deprecated implementation, extremely slow

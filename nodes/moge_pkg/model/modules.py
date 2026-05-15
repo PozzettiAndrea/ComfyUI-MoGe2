@@ -5,6 +5,7 @@ import itertools
 import functools
 import sys
 
+import comfy.ops
 import torch
 from torch import Tensor
 import torch.nn as nn
@@ -14,21 +15,26 @@ from .dinov2.models.vision_transformer import DinoVisionTransformer
 from .utils import wrap_dinov2_attention_with_sdpa, wrap_module_with_gradient_checkpointing, unwrap_module_with_gradient_checkpointing
 from ..utils.geometry_torch import normalized_view_plane_uv
 
+ops = comfy.ops.disable_weight_init
 
-class ResidualConvBlock(nn.Module):  
+
+class ResidualConvBlock(nn.Module):
     def __init__(
-        self, 
-        in_channels: int, 
-        out_channels: int = None, 
-        hidden_channels: int = None, 
-        kernel_size: int = 3, 
-        padding_mode: str = 'replicate', 
-        activation: Literal['relu', 'leaky_relu', 'silu', 'elu'] = 'relu', 
+        self,
+        in_channels: int,
+        out_channels: int = None,
+        hidden_channels: int = None,
+        kernel_size: int = 3,
+        padding_mode: str = 'replicate',
+        activation: Literal['relu', 'leaky_relu', 'silu', 'elu'] = 'relu',
         in_norm: Literal['group_norm', 'layer_norm', 'instance_norm', 'none'] = 'layer_norm',
         hidden_norm: Literal['group_norm', 'layer_norm', 'instance_norm'] = 'group_norm',
-    ):  
-        super(ResidualConvBlock, self).__init__()  
-        if out_channels is None:  
+        dtype=None,
+        device=None,
+        operations=ops,
+    ):
+        super(ResidualConvBlock, self).__init__()
+        if out_channels is None:
             out_channels = in_channels
         if hidden_channels is None:
             hidden_channels = in_channels
@@ -45,21 +51,21 @@ class ResidualConvBlock(nn.Module):
             raise ValueError(f'Unsupported activation function: {activation}')
 
         self.layers = nn.Sequential(
-            nn.GroupNorm(in_channels // 32, in_channels) if in_norm == 'group_norm' else \
-                nn.GroupNorm(1, in_channels) if in_norm == 'layer_norm' else \
+            operations.GroupNorm(in_channels // 32, in_channels, dtype=dtype, device=device) if in_norm == 'group_norm' else \
+                operations.GroupNorm(1, in_channels, dtype=dtype, device=device) if in_norm == 'layer_norm' else \
                 nn.InstanceNorm2d(in_channels) if in_norm == 'instance_norm' else \
                 nn.Identity(),
             activation_cls(),
-            nn.Conv2d(in_channels, hidden_channels, kernel_size=kernel_size, padding=kernel_size // 2, padding_mode=padding_mode),
-            nn.GroupNorm(hidden_channels // 32, hidden_channels) if hidden_norm == 'group_norm' else \
-                nn.GroupNorm(1, hidden_channels) if hidden_norm == 'layer_norm' else \
+            operations.Conv2d(in_channels, hidden_channels, kernel_size=kernel_size, padding=kernel_size // 2, padding_mode=padding_mode, dtype=dtype, device=device),
+            operations.GroupNorm(hidden_channels // 32, hidden_channels, dtype=dtype, device=device) if hidden_norm == 'group_norm' else \
+                operations.GroupNorm(1, hidden_channels, dtype=dtype, device=device) if hidden_norm == 'layer_norm' else \
                 nn.InstanceNorm2d(hidden_channels) if hidden_norm == 'instance_norm' else\
                 nn.Identity(),
             activation_cls(),
-            nn.Conv2d(hidden_channels, out_channels, kernel_size=kernel_size, padding=kernel_size // 2, padding_mode=padding_mode)
+            operations.Conv2d(hidden_channels, out_channels, kernel_size=kernel_size, padding=kernel_size // 2, padding_mode=padding_mode, dtype=dtype, device=device)
         )
-        
-        self.skip_connection = nn.Conv2d(in_channels, out_channels, kernel_size=1, padding=0) if in_channels != out_channels else nn.Identity()  
+
+        self.skip_connection = operations.Conv2d(in_channels, out_channels, kernel_size=1, padding=0, dtype=dtype, device=device) if in_channels != out_channels else nn.Identity()
   
     def forward(self, x):  
         skip = self.skip_connection(x)  
@@ -75,21 +81,23 @@ class DINOv2Encoder(nn.Module):
     image_std: torch.Tensor
     dim_features: int
 
-    def __init__(self, backbone: str, intermediate_layers: Union[int, List[int]], dim_out: int, **deprecated_kwargs):
+    def __init__(self, backbone: str, intermediate_layers: Union[int, List[int]], dim_out: int, dtype=None, device=None, operations=ops, **deprecated_kwargs):
         super(DINOv2Encoder, self).__init__()
 
         self.intermediate_layers = intermediate_layers
 
-        # Load the backbone
+        # Load the backbone. The dinov2 hub backbones accept dtype/device/operations
+        # kwargs since the leaf-layer refactor; passing them through ensures the
+        # ViT's nn.Linear/LayerNorm/Conv2d become operations.* equivalents.
         self.hub_loader = getattr(importlib.import_module(".dinov2.hub.backbones", __package__), backbone)
         self.backbone_name = backbone
-        self.backbone = self.hub_loader(pretrained=False)
+        self.backbone = self.hub_loader(pretrained=False, dtype=dtype, device=device, operations=operations)
 
         self.dim_features = self.backbone.blocks[0].attn.qkv.in_features
         self.num_features = intermediate_layers if isinstance(intermediate_layers, int) else len(intermediate_layers)
 
         self.output_projections = nn.ModuleList([
-            nn.Conv2d(in_channels=self.dim_features, out_channels=dim_out, kernel_size=1, stride=1, padding=0,) 
+            operations.Conv2d(in_channels=self.dim_features, out_channels=dim_out, kernel_size=1, stride=1, padding=0, dtype=dtype, device=device)
                 for _ in range(self.num_features)
         ])
 
@@ -137,17 +145,20 @@ class DINOv2Encoder(nn.Module):
 
 
 class Resampler(nn.Sequential):
-    def __init__(self, 
-        in_channels: int, 
-        out_channels: int, 
+    def __init__(self,
+        in_channels: int,
+        out_channels: int,
         type_: Literal['pixel_shuffle', 'nearest', 'bilinear', 'conv_transpose', 'pixel_unshuffle', 'avg_pool', 'max_pool'],
-        scale_factor: int = 2, 
+        scale_factor: int = 2,
+        dtype=None,
+        device=None,
+        operations=ops,
     ):
         if type_ == 'pixel_shuffle':
             nn.Sequential.__init__(self,
-                nn.Conv2d(in_channels, out_channels * (scale_factor ** 2), kernel_size=3, stride=1, padding=1, padding_mode='replicate'),
+                operations.Conv2d(in_channels, out_channels * (scale_factor ** 2), kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device),
                 nn.PixelShuffle(scale_factor),
-                nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate')
+                operations.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device)
             )
             for i in range(1, scale_factor ** 2):
                 self[0].weight.data[i::scale_factor ** 2] = self[0].weight.data[0::scale_factor ** 2]
@@ -155,40 +166,40 @@ class Resampler(nn.Sequential):
         elif type_ in ['nearest', 'bilinear']:
             nn.Sequential.__init__(self,
                 nn.Upsample(scale_factor=scale_factor, mode=type_, align_corners=False if type_ == 'bilinear' else None),
-                nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate')
+                operations.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device)
             )
         elif type_ == 'conv_transpose':
             nn.Sequential.__init__(self,
-                nn.ConvTranspose2d(in_channels, out_channels, kernel_size=scale_factor, stride=scale_factor),
-                nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate')
+                operations.ConvTranspose2d(in_channels, out_channels, kernel_size=scale_factor, stride=scale_factor, dtype=dtype, device=device),
+                operations.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device)
             )
             self[0].weight.data[:] = self[0].weight.data[:, :, :1, :1]
         elif type_ == 'pixel_unshuffle':
             nn.Sequential.__init__(self,
                 nn.PixelUnshuffle(scale_factor),
-                nn.Conv2d(in_channels * (scale_factor ** 2), out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate')
+                operations.Conv2d(in_channels * (scale_factor ** 2), out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device)
             )
-        elif type_ == 'avg_pool': 
+        elif type_ == 'avg_pool':
             nn.Sequential.__init__(self,
-                nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate'),
+                operations.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device),
                 nn.AvgPool2d(kernel_size=scale_factor, stride=scale_factor),
             )
         elif type_ == 'max_pool':
             nn.Sequential.__init__(self,
-                nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate'),
+                operations.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, padding_mode='replicate', dtype=dtype, device=device),
                 nn.MaxPool2d(kernel_size=scale_factor, stride=scale_factor),
             )
         else:
             raise ValueError(f'Unsupported resampler type: {type_}')
 
 class MLP(nn.Sequential):
-    def __init__(self, dims: Sequence[int]):
+    def __init__(self, dims: Sequence[int], dtype=None, device=None, operations=ops):
         nn.Sequential.__init__(self,
             *itertools.chain(*[
-                (nn.Linear(dim_in, dim_out), nn.ReLU(inplace=True))
+                (operations.Linear(dim_in, dim_out, dtype=dtype, device=device), nn.ReLU(inplace=True))
                     for dim_in, dim_out in zip(dims[:-2], dims[1:-1])
             ]),
-            nn.Linear(dims[-2], dims[-1]),
+            operations.Linear(dims[-2], dims[-1], dtype=dtype, device=device),
         )
 
 
@@ -203,17 +214,20 @@ class ConvStack(nn.Module):
         res_block_in_norm: Literal['layer_norm', 'group_norm' , 'instance_norm', 'none'] = 'layer_norm',
         res_block_hidden_norm: Literal['layer_norm', 'group_norm' , 'instance_norm', 'none'] = 'group_norm',
         activation: Literal['relu', 'leaky_relu', 'silu', 'elu'] = 'relu',
+        dtype=None,
+        device=None,
+        operations=ops,
     ):
         super().__init__()
         self.input_blocks = nn.ModuleList([
-            nn.Conv2d(dim_in_, dim_res_block_, kernel_size=1, stride=1, padding=0) if dim_in_ is not None else nn.Identity() 
+            operations.Conv2d(dim_in_, dim_res_block_, kernel_size=1, stride=1, padding=0, dtype=dtype, device=device) if dim_in_ is not None else nn.Identity()
                 for dim_in_, dim_res_block_ in zip(dim_in if isinstance(dim_in, Sequence) else itertools.repeat(dim_in), dim_res_blocks)
         ])
         self.resamplers = nn.ModuleList([
-            Resampler(dim_prev, dim_succ, scale_factor=2, type_=resampler) 
+            Resampler(dim_prev, dim_succ, scale_factor=2, type_=resampler, dtype=dtype, device=device, operations=operations)
                 for i, (dim_prev, dim_succ, resampler) in enumerate(zip(
-                    dim_res_blocks[:-1], 
-                    dim_res_blocks[1:], 
+                    dim_res_blocks[:-1],
+                    dim_res_blocks[1:],
                     resamplers if isinstance(resamplers, Sequence) else itertools.repeat(resamplers)
                 ))
         ])
@@ -221,14 +235,15 @@ class ConvStack(nn.Module):
             nn.Sequential(
                 *(
                     ResidualConvBlock(
-                        dim_res_block_, dim_res_block_, dim_times_res_block_hidden * dim_res_block_, 
-                        activation=activation, in_norm=res_block_in_norm, hidden_norm=res_block_hidden_norm
+                        dim_res_block_, dim_res_block_, dim_times_res_block_hidden * dim_res_block_,
+                        activation=activation, in_norm=res_block_in_norm, hidden_norm=res_block_hidden_norm,
+                        dtype=dtype, device=device, operations=operations,
                     ) for _ in range(num_res_blocks[i] if isinstance(num_res_blocks, list) else num_res_blocks)
                 )
             ) for i, dim_res_block_ in enumerate(dim_res_blocks)
         ])
         self.output_blocks = nn.ModuleList([
-            nn.Conv2d(dim_res_block_, dim_out_, kernel_size=1, stride=1, padding=0) if dim_out_ is not None else nn.Identity() 
+            operations.Conv2d(dim_res_block_, dim_out_, kernel_size=1, stride=1, padding=0, dtype=dtype, device=device) if dim_out_ is not None else nn.Identity()
                 for dim_out_, dim_res_block_ in zip(dim_out if isinstance(dim_out, Sequence) else itertools.repeat(dim_out), dim_res_blocks)
         ])
 

@@ -10,7 +10,10 @@
 
 from typing import Callable, Optional
 
+import comfy.ops
 from torch import Tensor, nn
+
+ops = comfy.ops.disable_weight_init
 
 
 class Mlp(nn.Module):
@@ -22,13 +25,16 @@ class Mlp(nn.Module):
         act_layer: Callable[..., nn.Module] = nn.GELU,
         drop: float = 0.0,
         bias: bool = True,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         super().__init__()
         out_features = out_features or in_features
         hidden_features = hidden_features or in_features
-        self.fc1 = nn.Linear(in_features, hidden_features, bias=bias)
+        self.fc1 = operations.Linear(in_features, hidden_features, bias=bias, dtype=dtype, device=device)
         self.act = act_layer()
-        self.fc2 = nn.Linear(hidden_features, out_features, bias=bias)
+        self.fc2 = operations.Linear(hidden_features, out_features, bias=bias, dtype=dtype, device=device)
         self.drop = nn.Dropout(drop)
 
     def forward(self, x: Tensor) -> Tensor:

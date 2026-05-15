@@ -12,6 +12,7 @@ import math
 import logging
 from typing import Sequence, Tuple, Union, Callable, Optional, List
 
+import comfy.ops
 import torch
 import torch.nn as nn
 import torch.utils.checkpoint
@@ -19,6 +20,7 @@ from torch.nn.init import trunc_normal_
 
 from ..layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention, NestedTensorBlock as Block
 
+ops = comfy.ops.disable_weight_init
 
 logger = logging.getLogger("dinov2")
 
@@ -65,6 +67,9 @@ class DinoVisionTransformer(nn.Module):
         num_register_tokens=0,
         interpolate_antialias=False,
         interpolate_offset=0.1,
+        dtype=None,
+        device=None,
+        operations=ops,
     ):
         """
         Args:
@@ -92,7 +97,7 @@ class DinoVisionTransformer(nn.Module):
             interpolate_offset: (float) work-around offset to apply when interpolating positional embeddings
         """
         super().__init__()
-        norm_layer = partial(nn.LayerNorm, eps=1e-6)
+        norm_layer = partial(operations.LayerNorm, eps=1e-6, dtype=dtype, device=device)
 
         self.num_features = self.embed_dim = embed_dim  # num_features for consistency with other models
         self.num_tokens = 1
@@ -103,7 +108,10 @@ class DinoVisionTransformer(nn.Module):
         self.interpolate_antialias = interpolate_antialias
         self.interpolate_offset = interpolate_offset
 
-        self.patch_embed = embed_layer(img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim)
+        self.patch_embed = embed_layer(
+            img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim,
+            dtype=dtype, device=device, operations=operations,
+        )
         num_patches = self.patch_embed.num_patches
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
@@ -147,6 +155,9 @@ class DinoVisionTransformer(nn.Module):
                 act_layer=act_layer,
                 ffn_layer=ffn_layer,
                 init_values=init_values,
+                dtype=dtype,
+                device=device,
+                operations=operations,
             )
             for i in range(depth)
         ]

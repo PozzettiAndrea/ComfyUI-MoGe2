@@ -12,6 +12,7 @@ import os
 from typing import Callable, List, Any, Tuple, Dict
 import warnings
 
+import comfy.ops
 import torch
 from torch import nn, Tensor
 
@@ -20,6 +21,7 @@ from .drop_path import DropPath
 from .layer_scale import LayerScale
 from .mlp import Mlp
 
+ops = comfy.ops.disable_weight_init
 
 logger = logging.getLogger("dinov2")
 
@@ -53,12 +55,19 @@ class Block(nn.Module):
         init_values=None,
         drop_path: float = 0.0,
         act_layer: Callable[..., nn.Module] = nn.GELU,
-        norm_layer: Callable[..., nn.Module] = nn.LayerNorm,
+        norm_layer: Callable[..., nn.Module] = None,
         attn_class: Callable[..., nn.Module] = Attention,
         ffn_layer: Callable[..., nn.Module] = Mlp,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         super().__init__()
         # print(f"biases: qkv: {qkv_bias}, proj: {proj_bias}, ffn: {ffn_bias}")
+        # Default norm_layer is operations.LayerNorm (ComfyUI-native) instead of
+        # raw nn.LayerNorm. Callers that pass an explicit norm_layer keep that.
+        if norm_layer is None:
+            norm_layer = lambda d: operations.LayerNorm(d, dtype=dtype, device=device)
         self.norm1 = norm_layer(dim)
         self.attn = attn_class(
             dim,
@@ -67,6 +76,9 @@ class Block(nn.Module):
             proj_bias=proj_bias,
             attn_drop=attn_drop,
             proj_drop=drop,
+            dtype=dtype,
+            device=device,
+            operations=operations,
         )
         self.ls1 = LayerScale(dim, init_values=init_values) if init_values else nn.Identity()
         self.drop_path1 = DropPath(drop_path) if drop_path > 0.0 else nn.Identity()
@@ -79,6 +91,9 @@ class Block(nn.Module):
             act_layer=act_layer,
             drop=drop,
             bias=ffn_bias,
+            dtype=dtype,
+            device=device,
+            operations=operations,
         )
         self.ls2 = LayerScale(dim, init_values=init_values) if init_values else nn.Identity()
         self.drop_path2 = DropPath(drop_path) if drop_path > 0.0 else nn.Identity()

@@ -4,6 +4,8 @@ from functools import partial
 from pathlib import Path
 import warnings
 
+import comfy.ops
+import comfy.utils
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -18,6 +20,8 @@ from ..utils.geometry_torch import normalized_view_plane_uv, recover_focal_shift
 from .utils import wrap_dinov2_attention_with_sdpa, wrap_module_with_gradient_checkpointing, unwrap_module_with_gradient_checkpointing
 from .modules import DINOv2Encoder, MLP, ConvStack
 
+ops = comfy.ops.disable_weight_init
+
     
 class MoGeModel(nn.Module):
     encoder: DINOv2Encoder
@@ -27,7 +31,7 @@ class MoGeModel(nn.Module):
     scale_head: MLP
     onnx_compatible_mode: bool
 
-    def __init__(self, 
+    def __init__(self,
         encoder: Dict[str, Any],
         neck: Dict[str, Any],
         points_head: Dict[str, Any] = None,
@@ -36,6 +40,9 @@ class MoGeModel(nn.Module):
         scale_head: Dict[str, Any] = None,
         remap_output: Literal['linear', 'sinh', 'exp', 'sinh_exp'] = 'linear',
         num_tokens_range: List[int] = [1200, 3600],
+        dtype=None,
+        device=None,
+        operations=ops,
         **deprecated_kwargs
     ):
         super(MoGeModel, self).__init__()
@@ -44,17 +51,20 @@ class MoGeModel(nn.Module):
 
         self.remap_output = remap_output
         self.num_tokens_range = num_tokens_range
-        
-        self.encoder = DINOv2Encoder(**encoder) 
-        self.neck = ConvStack(**neck)
+
+        # Thread dtype/device/operations into the sub-modules. The encoder/neck/heads
+        # configs come from the checkpoint and may not include these kwargs already.
+        _comfy_kwargs = dict(dtype=dtype, device=device, operations=operations)
+        self.encoder = DINOv2Encoder(**encoder, **_comfy_kwargs)
+        self.neck = ConvStack(**neck, **_comfy_kwargs)
         if points_head is not None:
-            self.points_head = ConvStack(**points_head) 
+            self.points_head = ConvStack(**points_head, **_comfy_kwargs)
         if mask_head is not None:
-            self.mask_head = ConvStack(**mask_head)
+            self.mask_head = ConvStack(**mask_head, **_comfy_kwargs)
         if normal_head is not None:
-            self.normal_head = ConvStack(**normal_head)
+            self.normal_head = ConvStack(**normal_head, **_comfy_kwargs)
         if scale_head is not None:
-            self.scale_head = MLP(**scale_head)
+            self.scale_head = MLP(**scale_head, **_comfy_kwargs)
 
     @property
     def device(self) -> torch.device:
@@ -96,7 +106,7 @@ class MoGeModel(nn.Module):
                 filename="model.pt",
                 **hf_kwargs
             )
-        checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=True)
+        checkpoint = comfy.utils.load_torch_file(str(checkpoint_path), safe_load=True)
         
         model_config = checkpoint['model_config']
         if model_kwargs is not None:
@@ -237,14 +247,21 @@ class MoGeModel(nn.Module):
             min_tokens, max_tokens = self.num_tokens_range
             num_tokens = int(min_tokens + (resolution_level / 9) * (max_tokens - min_tokens))
 
-        # Forward pass
-        with torch.autocast(device_type=self.device.type, dtype=torch.float16, enabled=use_fp16 and self.dtype != torch.float16):
-            output = self.forward(image, num_tokens=num_tokens)
+        # Forward pass. The original code wrapped this in torch.autocast(fp16);
+        # comfy.ops layers handle dtype via cast_bias_weight, and the loader's
+        # `precision` widget already sets self.dtype to fp16 if requested, so an
+        # extra autocast becomes redundant.
+        if use_fp16 and self.dtype != torch.float16:
+            image = image.to(dtype=torch.float16)
+        output = self.forward(image, num_tokens=num_tokens)
         points, normal, mask, metric_scale = (output.get(k, None) for k in ['points', 'normal', 'mask', 'metric_scale'])
 
-        # Always process the output in fp32 precision
+        # Always process the output in fp32 precision (autocast removed).
         points, normal, mask, metric_scale, fov_x = map(lambda x: x.float() if isinstance(x, torch.Tensor) else x, [points, normal, mask, metric_scale, fov_x])
-        with torch.autocast(device_type=self.device.type, dtype=torch.float32):
+        # Kept the original indented block under `if True:` to avoid touching
+        # dozens of indented lines; comfy.ops handles dtype management at the
+        # layer level so the original autocast wrapper became unnecessary.
+        if True:
             if mask is not None:
                 mask_binary = mask > 0.5
             else:

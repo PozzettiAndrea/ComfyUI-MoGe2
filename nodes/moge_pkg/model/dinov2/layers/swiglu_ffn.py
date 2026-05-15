@@ -7,8 +7,11 @@ import os
 from typing import Callable, Optional
 import warnings
 
+import comfy.ops
 from torch import Tensor, nn
 import torch.nn.functional as F
+
+ops = comfy.ops.disable_weight_init
 
 
 class SwiGLUFFN(nn.Module):
@@ -20,12 +23,15 @@ class SwiGLUFFN(nn.Module):
         act_layer: Callable[..., nn.Module] = None,
         drop: float = 0.0,
         bias: bool = True,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         super().__init__()
         out_features = out_features or in_features
         hidden_features = hidden_features or in_features
-        self.w12 = nn.Linear(in_features, 2 * hidden_features, bias=bias)
-        self.w3 = nn.Linear(hidden_features, out_features, bias=bias)
+        self.w12 = operations.Linear(in_features, 2 * hidden_features, bias=bias, dtype=dtype, device=device)
+        self.w3 = operations.Linear(hidden_features, out_features, bias=bias, dtype=dtype, device=device)
 
     def forward(self, x: Tensor) -> Tensor:
         x12 = self.w12(x)
@@ -60,13 +66,21 @@ class SwiGLUFFNFused(SwiGLU):
         act_layer: Callable[..., nn.Module] = None,
         drop: float = 0.0,
         bias: bool = True,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         out_features = out_features or in_features
         hidden_features = hidden_features or in_features
         hidden_features = (int(hidden_features * 2 / 3) + 7) // 8 * 8
-        super().__init__(
+        # xformers SwiGLU (the alternate base class) doesn't accept dtype/device/operations.
+        # When XFORMERS_AVAILABLE is False, SwiGLU IS our SwiGLUFFN above which does.
+        super_kwargs = dict(
             in_features=in_features,
             hidden_features=hidden_features,
             out_features=out_features,
             bias=bias,
         )
+        if not XFORMERS_AVAILABLE:
+            super_kwargs.update(dtype=dtype, device=device, operations=operations)
+        super().__init__(**super_kwargs)

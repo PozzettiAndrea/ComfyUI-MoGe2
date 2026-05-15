@@ -9,8 +9,11 @@
 
 from typing import Callable, Optional, Tuple, Union
 
+import comfy.ops
 from torch import Tensor
 import torch.nn as nn
+
+ops = comfy.ops.disable_weight_init
 
 
 def make_2tuple(x):
@@ -42,6 +45,9 @@ class PatchEmbed(nn.Module):
         embed_dim: int = 768,
         norm_layer: Optional[Callable] = None,
         flatten_embedding: bool = True,
+        dtype=None,
+        device=None,
+        operations=ops,
     ) -> None:
         super().__init__()
 
@@ -62,7 +68,7 @@ class PatchEmbed(nn.Module):
 
         self.flatten_embedding = flatten_embedding
 
-        self.proj = nn.Conv2d(in_chans, embed_dim, kernel_size=patch_HW, stride=patch_HW)
+        self.proj = operations.Conv2d(in_chans, embed_dim, kernel_size=patch_HW, stride=patch_HW, dtype=dtype, device=device)
         self.norm = norm_layer(embed_dim) if norm_layer else nn.Identity()
 
     def forward(self, x: Tensor) -> Tensor:

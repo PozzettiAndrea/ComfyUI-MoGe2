@@ -9,6 +9,7 @@ import random
 import subprocess
 from urllib.parse import urlparse
 
+import comfy.utils
 import numpy as np
 import torch
 from torch import nn
@@ -21,7 +22,7 @@ def load_pretrained_weights(model, pretrained_weights, checkpoint_key):
     if urlparse(pretrained_weights).scheme:  # If it looks like an URL
         state_dict = torch.hub.load_state_dict_from_url(pretrained_weights, map_location="cpu")
     else:
-        state_dict = torch.load(pretrained_weights, map_location="cpu")
+        state_dict = comfy.utils.load_torch_file(str(pretrained_weights), safe_load=True)
     if checkpoint_key is not None and checkpoint_key in state_dict:
         logger.info(f"Take key {checkpoint_key} in provided checkpoint dict")
         state_dict = state_dict[checkpoint_key]
