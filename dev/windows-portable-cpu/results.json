@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-05-15T11:31:40.997545+00:00",
+  "platform": "windows_portable",
+  "hardware": {
+    "os": "Windows-10-10.0.26100-SP0",
+    "cpu": "Intel64 Family 6 Model 106 Stepping 6, GenuineIntel"
+  },
+  "commit_hash": "43f177e0e3de4aad7e28f605ad1ac924be0f3d52",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/25915237975",
+  "success": true,
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "workflows": [
+    {
+      "name": "simple",
+      "status": "pass",
+      "duration_seconds": 80.55,
+      "error": null,
+      "hardware": {
+        "os": "Windows-10-10.0.26100-SP0",
+        "cpu": "Intel64 Family 6 Model 106 Stepping 6, GenuineIntel"
+      },
+      "resources": {
+        "ram": {
+          "peak": 4.57,
+          "avg": 2.85
+        },
+        "total_ram_gb": 16.0,
+        "samples": 81
+      }
+    }
+  ]
+}
