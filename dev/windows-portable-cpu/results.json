@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-16T19:09:55.374994+00:00",
+  "timestamp": "2026-05-16T19:53:31.565751+00:00",
   "platform": "windows_portable",
   "hardware": {
-    "os": "Windows-2025Server-10.0.26100-SP0",
+    "os": "Windows-10-10.0.26100-SP0",
     "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
   },
-  "commit_hash": "ebdbcf0d2e2151162d92a8c62c0109a29953ee93",
-  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/25970280427",
+  "commit_hash": "4ecb873e7bbb01fbb663c99d336b1b914103cce8",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/25971168538",
   "success": true,
   "summary": {
     "total": 1,
@@ -17,19 +17,19 @@
     {
       "name": "simple",
       "status": "pass",
-      "duration_seconds": 85.28,
+      "duration_seconds": 97.56,
       "error": null,
       "hardware": {
-        "os": "Windows-2025Server-10.0.26100-SP0",
+        "os": "Windows-10-10.0.26100-SP0",
         "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "ram": {
-          "peak": 4.63,
-          "avg": 2.97
+          "peak": 4.47,
+          "avg": 2.9
         },
         "total_ram_gb": 16.0,
-        "samples": 85
+        "samples": 97
       }
     }
   ]
