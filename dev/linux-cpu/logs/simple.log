@@ -5,31 +5,31 @@ Capturing execution frames: simple.json
   [ComfyUI] Received JSON with keys: ['prompt']
   [ComfyUI] Prompt has 5 nodes
   [ComfyUI]   Node 1: LoadImage
-  Queuing workflow for execution...
   [ComfyUI]     Inputs: {"image": "house_indoor.jpg"}
   [ComfyUI]   Node 2: DownloadAndLoadMoGe2Model
   [ComfyUI]     Inputs: {"model": "moge-2-vitl-normal.pt", "precision": "auto", "attention": "auto"}
   [ComfyUI]   Node 3: MoGe2Inference
   [ComfyUI]     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "moge_model": ["2", 0], "images": ["1", 0]}
   [ComfyUI]   Node 4: PreviewImage
+  Queuing workflow for execution...
   [ComfyUI]     Inputs: {"images": ["3", 0]}
   [ComfyUI]   Node 5: PreviewImage
   [ComfyUI]     Inputs: {"images": ["3", 2]}
-  [ComfyUI] Generated prompt_id: f5141e81-e883-44f3-9b43-6c3889f77e3e
+  [ComfyUI] Generated prompt_id: 034c7d4d-baf3-4070-8456-74f651ad6b3f
   [ComfyUI] Calling execution.validate_prompt()...
   [ComfyUI] Validation result: valid=True
   [ComfyUI] === Validation PASSED ===
   [ComfyUI] got prompt
   [ComfyUI] [comfy-env] Running DownloadAndLoadMoGe2Model: model: 'moge-2-vitl-normal.pt', precision: 'auto', attention: 'auto'
   [ComfyUI] [comfy-env] SubprocessWorker: /home/runner/.ce/.pixi/envs/moge2-nodes/bin/python
+  [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI'}
   [ComfyUI] [SubprocessWorker] call_method: nodes.load_model.DownloadAndLoadMoGe2Model.EXECUTE_NORMALIZED
-  [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI'}
-  [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
   [ComfyUI] [ComfyUI-MoGe2] python: /home/runner/.ce/.pixi/envs/moge2-nodes/bin/python
-  [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI', '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages', '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2']
+  [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI', '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.1/site-packages', '/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2']
+  [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
   [ComfyUI] [SubprocessWorker] is_pixi=True, python=/home/runner/.ce/.pixi/envs/moge2-nodes/bin/python
-  [ComfyUI] [SubprocessWorker] launching cmd=['/home/runner/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/home/runner/.ce/pixi.toml', '-e', 'moge2-nodes', 'python', '/tmp/comfyui_pvenv_sbo_w9zv/persistent_worker.py', 'abstract://comfy_worker_753e314db48b']...
-  [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_753e314db48b (abstract, no filesystem path)
+  [ComfyUI] [SubprocessWorker] launching cmd=['/home/runner/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/home/runner/.ce/pixi.toml', '-e', 'moge2-nodes', 'python', '/tmp/comfyui_pvenv_ms4v9f0o/persistent_worker.py', 'abstract://comfy_worker_2d7b403cc043']...
+  [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_2d7b403cc043 (abstract, no filesystem path)
   [ComfyUI] [worker:ComfyUI-MoGe2] ERROR: Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
   [ComfyUI] [SubprocessWorker] worker started/confirmed
   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
@@ -37,23 +37,31 @@ Capturing execution frames: simple.json
   [ComfyUI] [SubprocessWorker] sending request via socket...
   [ComfyUI] [SubprocessWorker] call_id=1 sending call_method
   [ComfyUI] 
-  Frame 2 saved (frame_001.jpg, t=2.2s)
-  [capture-periodic] freeze=1ms shot=102ms unfreeze=2ms saved=True
+  Frame 2 saved (frame_001.jpg, t=2.3s)
+  [capture-periodic] freeze=2ms shot=114ms unfreeze=3ms saved=True
   [ComfyUI] model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]
-  [ComfyUI] model.pt:  10%|█         | 134M/1.32G [00:02<00:17, 66.6MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt:   5%|▌         | 67.1M/1.32G [00:01<00:19, 66.1MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt:  19%|█▉        | 256M/1.32G [00:01<00:06, 161MB/s]  [SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt:  46%|████▌     | 604M/1.32G [00:02<00:01, 402MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt:  61%|██████    | 805M/1.32G [00:02<00:01, 490MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt:  77%|███████▋  | 1.02G/1.32G [00:02<00:00, 584MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
   Frame 3 saved (frame_002.jpg, t=4.5s)
+  [capture-periodic] freeze=35ms shot=329ms unfreeze=6ms saved=True
   [ComfyUI] 
-  [capture-periodic] freeze=6ms shot=143ms unfreeze=5ms saved=True
-  [ComfyUI] model.pt:  20%|██        | 268M/1.32G [00:02<00:08, 119MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
-  [capture-loop] iter=50 t=5.8s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=3.1/15.6GB (20%) swap=0.0/3.0GB (0%) cpu=29% browser_rss=0.84GB
-  Frame 4 saved (frame_003.jpg, t=6.8s)
-  [capture-periodic] freeze=3ms shot=107ms unfreeze=2ms saved=True
+  [ComfyUI] model.pt:  86%|████████▌ | 1.14G/1.32G [00:02<00:00, 554MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
   [ComfyUI] 
-  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:04<00:00, 394MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:03<00:00, 602MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [capture-loop] iter=50 t=6.5s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=2.3/15.6GB (15%) swap=0.0/3.0GB (0%) cpu=34% browser_rss=0.89GB
+  Frame 4 saved (frame_003.jpg, t=7.3s)
+  [capture-periodic] freeze=1ms shot=108ms unfreeze=2ms saved=True
   [ComfyUI] 
-  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:07<00:00, 169MB/s]
+  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:06<00:00, 207MB/s]
   [ComfyUI] [SubprocessWorker] got response: ok
-  [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (9.91s): result: NodeOutput
+  [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (8.42s): result: NodeOutput
   [ComfyUI] [comfy-env] Running MoGe2Inference: resolution_level: 9, num_tokens: 0, fov_x_deg: 0.0, force_projection: True, apply_mask: True, moge_model: dict, images: torch.float32 [1,1000,1500,3] cpu
   [ComfyUI] [SubprocessWorker] call_method: nodes.nodes_inference.MoGe2Inference.EXECUTE_NORMALIZED
   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
@@ -68,80 +76,81 @@ Capturing execution frames: simple.json
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] _from_shm got dict with keys: ['__type__', 'strategy', 'parent_pid', 'fd', 'storage_size']
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZE TensorRef: tensor_size=[1, 1000, 1500, 3]
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZED tensor shape: torch.Size([1, 1000, 1500, 3])
-  Frame 5 saved (frame_004.jpg, t=10.1s)
-  [capture-periodic] freeze=2ms shot=227ms unfreeze=3ms saved=True
   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: No comfy kitchen, using old apply_rope functions.
-  [capture-loop] iter=100 t=12.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=2.3/15.6GB (15%) swap=0.0/3.0GB (0%) cpu=18% browser_rss=0.84GB
-  [capture-loop] iter=150 t=18.1s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.84GB
+  Frame 5 saved (frame_004.jpg, t=9.6s)
+  [capture-periodic] freeze=1ms shot=114ms unfreeze=4ms saved=True
+  [capture-loop] iter=100 t=12.3s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=2.3/15.6GB (15%) swap=0.0/3.0GB (0%) cpu=24% browser_rss=0.89GB
   [ComfyUI] [SubprocessWorker] callback 'request_vram_budget' from call_id=2
-  [ComfyUI] [comfy-env] VRAM request: 1.32GB, free before eviction: 11.67GB
-  [ComfyUI] [comfy-env] VRAM after eviction: 11.67GB
-  [capture-loop] iter=200 t=23.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.7/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.84GB
-  [capture-loop] iter=250 t=29.0s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.7/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=33% browser_rss=0.77GB
-  [capture-loop] iter=300 t=34.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.77GB
-  [capture-loop] iter=350 t=40.0s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.77GB
-  [capture-loop] iter=400 t=45.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.77GB
-  [capture-loop] iter=450 t=51.0s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.77GB
-  [capture-loop] iter=500 t=56.5s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.76GB
+  [ComfyUI] [comfy-env] VRAM request: 1.32GB, free before eviction: 11.85GB
+  [ComfyUI] [comfy-env] VRAM after eviction: 11.85GB
+  [capture-loop] iter=150 t=17.8s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=33% browser_rss=0.88GB
+  [capture-loop] iter=200 t=23.3s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.88GB
+  [capture-loop] iter=250 t=28.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=33% browser_rss=0.81GB
+  [capture-loop] iter=300 t=34.3s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.81GB
+  [capture-loop] iter=350 t=39.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.81GB
+  [capture-loop] iter=400 t=45.2s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.81GB
+  [capture-loop] iter=450 t=50.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.81GB
+  [capture-loop] iter=500 t=56.1s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.80GB
   [ComfyUI] [worker:ComfyUI-MoGe2]
   [ComfyUI] === WATCHDOG TICK 1 ===
-  [ComfyUI] [worker:ComfyUI-MoGe2] Thread 0x00007f37938086c0 (most recent call first):
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 331 in wait
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 629 in wait
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 1002 in _bootstrap
+  [ComfyUI] [worker:ComfyUI-MoGe2] Thread 0x00007ff91a55f6c0 (most recent call first):
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 324 in wait
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 607 in wait
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/tqdm/_monitor.py", line 60 in run
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 1016 in _bootstrap_inner
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 973 in _bootstrap
   [ComfyUI] 
-  [ComfyUI] Current thread 0x00007f379480d6c0 (most recent call first):
-  [ComfyUI]   File "/tmp/comfyui_pvenv_sbo_w9zv/persistent_worker.py", line 52 in _watchdog
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 982 in run
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/threading.py", line 1002 in _bootstrap
+  [ComfyUI] Current thread 0x00007ff91b5606c0 (most recent call first):
+  [ComfyUI]   File "/tmp/comfyui_pvenv_ms4v9f0o/persistent_worker.py", line 52 in _watchdog
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 953 in run
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 1016 in _bootstrap_inner
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/threading.py", line 973 in _bootstrap
   [ComfyUI] 
-  [ComfyUI] Thread 0x00007f3795330740 (most recent call first):
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 134 in forward
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/comfy/ops.py", line 484 in forward
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/mlp.py", line 41 in forward
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 108 in ffn_residual_func
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 127 in forward
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 268 in forward
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/models/vision_transformer.py", line 300 in _get_intermediate_layers_not_chunked
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/models/vision_transformer.py", line 331 in get_intermediate_layers
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/modules.py", line 133 in forward
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/v2.py", line 160 in forward
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/v2.py", line 256 in infer
-  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124 in decorate_context
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/load_model.py", line 81 in infer
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/nodes_inference.py", line 138 in execute
-  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1124/ComfyUI/comfy_api/latest/_io.py", line 1833 in EXECUTE_NORMALIZED
-  [ComfyUI]   File "/tmp/comfyui_pvenv_sbo_w9zv/persistent_worker.py", line 1762 in main
-  [ComfyUI]   File "/tmp/comfyui_pvenv_sbo_w9zv/persistent_worker.py", line 1807 in <module>
+  [ComfyUI] Thread 0x00007ff91c03b740 (most recent call first):
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134 in forward
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/comfy/ops.py", line 484 in forward
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/mlp.py", line 44 in forward
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 108 in ffn_residual_func
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 127 in forward
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/layers/block.py", line 268 in forward
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/models/vision_transformer.py", line 300 in _get_intermediate_layers_not_chunked
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/dinov2/models/vision_transformer.py", line 331 in get_intermediate_layers
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/modules.py", line 133 in forward
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787 in _call_impl
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776 in _wrapped_call_impl
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/v2.py", line 160 in forward
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/moge_pkg/model/v2.py", line 256 in infer
+  [ComfyUI]   File "/home/runner/.ce/.pixi/envs/moge2-nodes/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124 in decorate_context
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/load_model.py", line 81 in infer
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes/nodes_inference.py", line 138 in execute
+  [ComfyUI]   File "/home/runner/work/comfy-gpu-ci/comfy-gpu-ci/test_workspaces/MoGe2-1848/ComfyUI/comfy_api/latest/_io.py", line 1833 in EXECUTE_NORMALIZED
+  [ComfyUI]   File "/tmp/comfyui_pvenv_ms4v9f0o/persistent_worker.py", line 1762 in main
+  [ComfyUI]   File "/tmp/comfyui_pvenv_ms4v9f0o/persistent_worker.py", line 1807 in <module>
   [ComfyUI] 
   [ComfyUI] [worker:ComfyUI-MoGe2] === END ===
   [ComfyUI] 
-  [capture-loop] iter=550 t=61.9s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.76GB
-  [capture-loop] iter=600 t=67.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.76GB
-  [capture-loop] iter=650 t=72.8s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.6/15.6GB (30%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.76GB
+  [capture-loop] iter=550 t=61.5s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=31% browser_rss=0.80GB
+  [capture-loop] iter=600 t=67.1s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.80GB
+  [capture-loop] iter=650 t=72.5s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.80GB
+  [capture-loop] iter=700 t=78.0s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=2 ram=4.5/15.6GB (29%) swap=0.0/3.0GB (0%) cpu=32% browser_rss=0.80GB
   [ComfyUI] [SubprocessWorker] callback 'report_progress' from call_id=2
   [ComfyUI] [SubprocessWorker] got response: ok
-  [ComfyUI] [comfy-env] MoGe2Inference done (64.27s): result: NodeOutput
+  [ComfyUI] [comfy-env] MoGe2Inference done (72.79s): result: NodeOutput
   Node executed (1 total), capturing...
-  [ComfyUI] Prompt executed in 74.38 seconds
-  Frame 6 saved (frame_005.jpg, t=74.7s)
-  [capture-node] freeze=2ms shot=141ms unfreeze=4ms saved=True
+  [ComfyUI] Prompt executed in 81.42 seconds
+  Frame 6 saved (frame_005.jpg, t=81.7s)
+  [capture-node] freeze=2ms shot=140ms unfreeze=2ms saved=True
   Node executed (2 total), capturing...
-  Frame 7 saved (frame_006.jpg, t=75.2s)
+  Frame 7 saved (frame_006.jpg, t=82.2s)
   [capture-node] freeze=2ms shot=143ms unfreeze=0ms saved=True
-  Execution complete (t=75.2s)
-  Captured 7 unique frames over 75.35s
+  Execution complete (t=82.2s)
+  Captured 7 unique frames over 82.36s
   [debug] iframes: 0
   [timing] trigger_3d_previews: 0.0s
   Saved high-quality screenshot: simple_executed.png
