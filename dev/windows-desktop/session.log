@@ -1,0 +1,88 @@
+[   2s] CDP targets: 1
+[   2s]   page: file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/not-supported | ComfyUI
+[   3s] Main page: file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/not-supported | ComfyUI
+[   3s] Buttons: ['Learn More', 'Report Issue', 'Continue']
+[   3s]   wizard: COMFY_TEST_GPU=0 platform=win32 preferred=['CPU']
+[   6s]   clicked [BTN|Continue]
+[   9s]   url: file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/not-supported -> file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/install
+[   9s]   clicked [TILE|CPU]
+[  13s]   clicked [BTN|Next]
+[  20s]   clicked [BTN|Next]
+[  24s]   clicked [BTN|Install]
+[  27s]   url: file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/install -> file:///C:/Users/stduser/.comfy-test-cache/desktop/ComfyUI/resources/desktop-ui/index.html#/server-start
+[ 140s]   /system_stats up after 136s
+[ 140s]   app: waiting for backend stability (continuous /system_stats up for 30s)
+[ 140s]   app: /system_stats up; awaiting 30s of stability
+[ 170s]   app: backend stable for 30s; proceeding
+[ 170s]   capturing canvas load...
+[ 178s]   post: waiting for Cloud upsell
+[ 212s]   post: Cloud upsell not found, skipping
+[ 212s]   post: pressed Escape (Cloud upsell fallback)
+[ 214s]   post: waiting for Close Templates
+[ 226s]   post: Close Templates not found, skipping
+[ 226s]   post: pressed Escape (Close Templates fallback)
+[ 228s]   post: waiting for Extensions
+[ 229s]   post: clicked Extensions via [button[aria-label="Extensions"]:visible]
+[ 231s]   ext: pyproject.toml fetch/parse failed: HTTP Error 404: Not Found
+[ 231s]   ext: node meta = display=None publisher=None version=None
+[ 234s]   ext: searching "__no_match_should_ever__"
+[ 239s]   ext: clicking __no_match_should_ever__ by __no_match_should_ever__ tile
+[ 247s]   ext: tile not found, ending capture
+[ 247s] Captured 195 frames
+[ 248s] Wrote D:\a\comfy-gpu-ci\comfy-gpu-ci\comfy-test-logs\MoGe2-1828\dev\windows-desktop\results.json (0 workflow(s), sha=ab03cd57f963)
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, image2, from 'D:\a\comfy-gpu-ci\comfy-gpu-ci\comfy-test-logs\MoGe2-1828\dev\windows-desktop\debug\electron_inspect\frames\frame_%06d.png':
+  Duration: 00:00:39.00, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/bt709/iec61966-2-1), 1008x681, 5 fps, 5 tbr, 5 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000002008a692c40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002008a692c40] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 000002008a692c40] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=5 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'D:\a\comfy-gpu-ci\comfy-gpu-ci\comfy-test-logs\MoGe2-1828\dev\windows-desktop\debug\electron_inspect\driver.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 1008x682, q=2-31, 5 fps, 10240 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[vf#0:0 @ 000002008a693ac0] Reconfiguring filter graph because video parameters changed to rgba(pc, gbr), 1008x681
+frame=   15 fps=0.0 q=23.0 size=       0KiB time=00:00:02.60 bitrate=   0.1kbits/s speed=5.08x    
+[vf#0:0 @ 000002008a693ac0] Reconfiguring filter graph because video parameters changed to rgb24(pc, gbr), 1008x681
+frame=   68 fps= 66 q=23.0 size=     256KiB time=00:00:13.20 bitrate= 158.9kbits/s speed=12.9x    
+frame=  127 fps= 82 q=23.0 size=     512KiB time=00:00:25.00 bitrate= 167.8kbits/s speed=16.2x    
+[out#0/mp4 @ 000002008aa05600] video:619KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.497230%
+frame=  195 fps=109 q=-1.0 Lsize=     622KiB time=00:00:38.60 bitrate= 132.0kbits/s speed=21.5x    
+[libx264 @ 000002008a692c40] frame I:5     Avg QP: 8.80  size: 41503
+[libx264 @ 000002008a692c40] frame P:54    Avg QP:15.44  size:  6162
+[libx264 @ 000002008a692c40] frame B:136   Avg QP:19.72  size:   682
+[libx264 @ 000002008a692c40] consecutive B-frames:  6.7%  0.0%  3.1% 90.3%
+[libx264 @ 000002008a692c40] mb I  I16..4: 63.4% 11.9% 24.7%
+[libx264 @ 000002008a692c40] mb P  I16..4:  6.0%  3.5%  4.7%  P16..4:  2.1%  0.7%  0.4%  0.0%  0.0%    skip:82.5%
+[libx264 @ 000002008a692c40] mb B  I16..4:  0.1%  0.3%  0.2%  B16..8:  2.4%  0.3%  0.2%  direct: 0.2%  skip:96.4%  L0:48.2% L1:49.4% BI: 2.3%
+[libx264 @ 000002008a692c40] 8x8 transform intra:21.1% inter:31.1%
+[libx264 @ 000002008a692c40] coded y,uvDC,uvAC intra: 31.4% 10.4% 8.4% inter: 0.9% 0.2% 0.1%
+[libx264 @ 000002008a692c40] i16 v,h,dc,p: 72% 25%  2%  0%
+[libx264 @ 000002008a692c40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 34% 19% 42%  1%  1%  1%  1%  1%  2%
+[libx264 @ 000002008a692c40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 32% 14%  2%  3%  3%  3%  2%  3%
+[libx264 @ 000002008a692c40] i8c dc,h,v,p: 87%  9%  4%  1%
+[libx264 @ 000002008a692c40] Weighted P-Frames: Y:5.6% UV:3.7%
+[libx264 @ 000002008a692c40] ref P L0: 66.5% 15.7% 12.8%  5.0%  0.0%
+[libx264 @ 000002008a692c40] ref B L0: 70.6% 24.2%  5.3%
+[libx264 @ 000002008a692c40] ref B L1: 96.9%  3.1%
+[libx264 @ 000002008a692c40] kb/s:129.85
+[ 250s] Wrote D:\a\comfy-gpu-ci\comfy-gpu-ci\comfy-test-logs\MoGe2-1828\dev\windows-desktop\debug\electron_inspect\driver.mp4
+[ 250s]   videos/system/driver.mp4 placed (no workflows ran)
+[ 250s]   removed D:\a\comfy-gpu-ci\comfy-gpu-ci\comfy-test-logs\MoGe2-1828\dev\windows-desktop\debug\electron_inspect\frames after successful encode
