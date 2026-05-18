@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-05-18T18:45:15.192590+00:00",
+  "platform": "macos_desktop",
+  "hardware": {
+    "os": "macOS-15.7.4-arm64-arm-64bit",
+    "cpu": "arm"
+  },
+  "commit_hash": "ab03cd57f963780f29dc30a39f953f1acc54246f",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/26052455331",
+  "success": false,
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  },
+  "workflows": []
+}

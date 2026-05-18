@@ -1,0 +1,53 @@
+** ComfyUI startup time: 2026-05-18 18:43:42.153
+[2026-05-18 18:43:42.154] ** Platform: Darwin
+[2026-05-18 18:43:42.154] ** Python version: 3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]
+[2026-05-18 18:43:42.154] ** Python executable: /Users/runner/Documents/ComfyUI/.venv/bin/python
+[2026-05-18 18:43:42.154] ** ComfyUI Path: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI
+[2026-05-18 18:43:42.154] ** ComfyUI Base Folder Path: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI
+[2026-05-18 18:43:42.154] ** User directory: /Users/runner/Documents/ComfyUI/user
+[2026-05-18 18:43:42.154] ** ComfyUI-Manager config path: /Users/runner/Documents/ComfyUI/user/__manager/config.ini
+[2026-05-18 18:43:42.154] ** Log path: /Users/runner/Documents/ComfyUI/user/comfyui.log
+[ComfyUI-Manager] Skipped fixing the 'comfyui-frontend-package' dependency because the ComfyUI is outdated.
+[2026-05-18 18:43:42.695] [PRE] ComfyUI-Manager
+[2026-05-18 18:43:50.507] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
+[2026-05-18 18:43:50.507] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[2026-05-18 18:43:50.507] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/Documents/ComfyUI/.venv/lib/python3.12/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
+[2026-05-18 18:43:50.546] Checkpoint files will always be loaded safely.
+[2026-05-18 18:43:50.645] Total VRAM 7168 MB, total RAM 7168 MB
+[2026-05-18 18:43:50.645] pytorch version: 2.10.0
+[2026-05-18 18:43:50.650] Mac Version (15, 7, 4)
+[2026-05-18 18:43:50.651] Set vram state to: SHARED
+[2026-05-18 18:43:50.652] Device: mps
+[2026-05-18 18:43:51.969] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[2026-05-18 18:43:58.454] Python version: 3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]
+[2026-05-18 18:43:58.454] ComfyUI version: 0.21.1
+[2026-05-18 18:43:58.455] comfy-aimdo version: 0.3.0
+[2026-05-18 18:43:58.455] comfy-kitchen version: 0.2.8
+[2026-05-18 18:43:58.456] [Prompt Server] web root: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI/web_custom_versions/desktop_app
+[2026-05-18 18:43:58.459] Asset seeder disabled
+[2026-05-18 18:43:58.459] [START] ComfyUI-Manager
+[2026-05-18 18:43:58.940] [ComfyUI-Manager] Using GitPython backend
+[2026-05-18 18:43:59.015] [ComfyUI-Manager] network_mode: public
+[2026-05-18 18:43:59.021] [ComfyUI-Manager] The matrix sharing feature has been disabled because the `matrix-nio` dependency is not installed.
+	To use this feature, please run the following command:
+	/Users/runner/Documents/ComfyUI/.venv/bin/python -m pip install matrix-nio
+
+[2026-05-18 18:44:02.198] 
+Import times for custom nodes:
+[2026-05-18 18:44:02.198]    0.0 seconds: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes/websocket_image_save.py
+[2026-05-18 18:44:02.198] 
+[2026-05-18 18:44:02.221] Context impl SQLiteImpl.
+[2026-05-18 18:44:02.221] Will assume non-transactional DDL.
+[2026-05-18 18:44:02.236] Context impl SQLiteImpl.
+[2026-05-18 18:44:02.236] Will assume non-transactional DDL.
+[2026-05-18 18:44:02.240] Running upgrade  -> 0001_assets, Initial assets schema
+Revision ID: 0001_assets
+Revises: None
+Create Date: 2025-12-10 00:00:00
+[2026-05-18 18:44:02.290] Running upgrade 0001_assets -> 0002_merge_to_asset_references, Merge AssetInfo and AssetCacheState into unified asset_references table.
+[2026-05-18 18:44:02.337] Running upgrade 0002_merge_to_asset_references -> 0003_add_metadata_job_id, Add system_metadata and job_id columns to asset_references.
+Change preview_id FK from assets.id to asset_references.id.
+[2026-05-18 18:44:02.366] Database upgraded from None to 0003_add_metadata_job_id
+[2026-05-18 18:44:02.422] Starting server
+
+[2026-05-18 18:44:02.423] To see the GUI go to: http://127.0.0.1:8000

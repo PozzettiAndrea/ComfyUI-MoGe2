@@ -1,0 +1,83 @@
+[   0s] CDP targets: 1
+[   0s]   page: file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/welcome | ComfyUI
+[   1s] Main page: file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/welcome | ComfyUI
+[   2s] Buttons: ['Get Started']
+[   2s]   wizard: COMFY_TEST_GPU=0 platform=darwin preferred=['Apple Silicon', 'MPS', 'M4', 'M3', 'M2', 'M1']
+[   2s]   clicked [BTN|Get Started]
+[   4s]   url: file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/welcome -> file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/install
+[   4s]   clicked [BTN|Next]
+[  11s]   clicked [BTN|Next]
+[  13s]   clicked [BTN|Install]
+[  14s]   url: file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/install -> file:///Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/desktop-ui/index.html#/server-start
+[  95s]   /system_stats up after 93s
+[  95s]   app: waiting for backend stability (continuous /system_stats up for 30s)
+[  95s]   app: /system_stats up; awaiting 30s of stability
+[ 126s]   app: backend stable for 30s; proceeding
+[ 126s]   capturing canvas load...
+[ 134s]   post: waiting for Cloud upsell
+[ 135s]   post: clicked Cloud upsell via [button:has-text("Continue Locally"):visible]
+[ 137s]   post: waiting for Close Templates
+[ 146s]   post: Close Templates not found, skipping
+[ 146s]   post: pressed Escape (Close Templates fallback)
+[ 148s]   post: waiting for Extensions
+[ 149s]   post: clicked Extensions via [button[aria-label="Extensions"]:visible]
+[ 151s]   ext: pyproject.toml fetch/parse failed: HTTP Error 404: Not Found
+[ 151s]   ext: node meta = display=None publisher=None version=None
+[ 154s]   ext: searching "__no_match_should_ever__"
+[ 159s]   ext: clicking __no_match_should_ever__ by __no_match_should_ever__ tile
+[ 167s]   ext: tile not found, ending capture
+[ 167s] Captured 146 frames
+[ 168s] Wrote /Users/runner/work/comfy-gpu-ci/comfy-gpu-ci/comfy-test-logs/MoGe2-1842/dev/macos-desktop/results.json (0 workflow(s), sha=ab03cd57f963)
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+  configuration: --prefix=/Volumes/tempdisk/sw --extra-cflags=-fno-stack-check --arch=arm64 --cc=/usr/bin/clang --enable-gpl --enable-libvmaf --enable-libopenjpeg --enable-libopus --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libwebp --enable-libass --enable-libfreetype --enable-fontconfig --enable-libtheora --enable-libvorbis --enable-libsnappy --enable-libaom --enable-libvidstab --enable-libzimg --enable-libsvtav1 --enable-libharfbuzz --enable-libkvazaar --pkg-config-flags=--static --enable-ffplay --enable-postproc --enable-neon --enable-runtime-cpudetect --disable-indev=qtkit --disable-indev=x11grab_xcb
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, image2, from '/Users/runner/work/comfy-gpu-ci/comfy-gpu-ci/comfy-test-logs/MoGe2-1842/dev/macos-desktop/debug/electron_inspect/frames/frame_%06d.png':
+  Duration: 00:00:29.20, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/bt709/iec61966-2-1), 1024x653, 5 fps, 5 tbr, 5 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x12ce067e0] using cpu capabilities: ARMv8 NEON
+[libx264 @ 0x12ce067e0] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x12ce067e0] 264 - core 164 r3190 7ed753b - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=5 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/Users/runner/work/comfy-gpu-ci/comfy-gpu-ci/comfy-test-logs/MoGe2-1842/dev/macos-desktop/debug/electron_inspect/driver.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 1024x654, q=2-31, 5 fps, 10240 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=   34 fps=0.0 q=23.0 size=       0KiB time=00:00:06.40 bitrate=   0.1kbits/s speed=11.2x    
+frame=  120 fps=100 q=23.0 size=     512KiB time=00:00:23.60 bitrate= 177.7kbits/s speed=19.7x    
+[out#0/mp4 @ 0x600002490000] video:607KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.414888%
+frame=  146 fps=115 q=-1.0 Lsize=     610KiB time=00:00:28.80 bitrate= 173.4kbits/s speed=22.7x    
+[libx264 @ 0x12ce067e0] frame I:6     Avg QP:10.71  size: 42686
+[libx264 @ 0x12ce067e0] frame P:42    Avg QP:18.12  size:  6733
+[libx264 @ 0x12ce067e0] frame B:98    Avg QP:20.20  size:   837
+[libx264 @ 0x12ce067e0] consecutive B-frames:  8.2%  5.5%  4.1% 82.2%
+[libx264 @ 0x12ce067e0] mb I  I16..4: 46.2% 29.1% 24.7%
+[libx264 @ 0x12ce067e0] mb P  I16..4:  4.1%  6.6%  5.0%  P16..4:  4.0%  1.4%  0.9%  0.0%  0.0%    skip:78.0%
+[libx264 @ 0x12ce067e0] mb B  I16..4:  0.1%  0.2%  0.2%  B16..8:  4.9%  0.7%  0.2%  direct: 0.3%  skip:93.4%  L0:47.1% L1:50.1% BI: 2.8%
+[libx264 @ 0x12ce067e0] 8x8 transform intra:35.8% inter:44.8%
+[libx264 @ 0x12ce067e0] coded y,uvDC,uvAC intra: 30.3% 9.8% 8.0% inter: 1.4% 0.5% 0.1%
+[libx264 @ 0x12ce067e0] i16 v,h,dc,p: 65% 32%  2%  0%
+[libx264 @ 0x12ce067e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 47% 18% 30%  1%  1%  0%  1%  1%  2%
+[libx264 @ 0x12ce067e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 29% 19%  2%  3%  3%  4%  3%  4%
+[libx264 @ 0x12ce067e0] i8c dc,h,v,p: 87%  9%  4%  1%
+[libx264 @ 0x12ce067e0] Weighted P-Frames: Y:2.4% UV:0.0%
+[libx264 @ 0x12ce067e0] ref P L0: 56.8%  2.1% 14.5% 26.7%
+[libx264 @ 0x12ce067e0] ref B L0: 72.7% 20.9%  6.4%
+[libx264 @ 0x12ce067e0] ref B L1: 90.8%  9.2%
+[libx264 @ 0x12ce067e0] kb/s:170.12
+[ 169s] Wrote /Users/runner/work/comfy-gpu-ci/comfy-gpu-ci/comfy-test-logs/MoGe2-1842/dev/macos-desktop/debug/electron_inspect/driver.mp4
+[ 169s]   videos/system/driver.mp4 placed (no workflows ran)
+[ 169s]   removed /Users/runner/work/comfy-gpu-ci/comfy-gpu-ci/comfy-test-logs/MoGe2-1842/dev/macos-desktop/debug/electron_inspect/frames after successful encode

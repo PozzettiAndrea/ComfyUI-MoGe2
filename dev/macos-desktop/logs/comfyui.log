@@ -1,0 +1,100 @@
+[2026-05-18 18:43:39.714] [info]  setup plugin alembic.autogenerate.schemas
+setup plugin alembic.autogenerate.tables
+setup plugin alembic.autogenerate.types
+setup plugin alembic.autogenerate.constraints
+
+[2026-05-18 18:43:39.716] [info]  setup plugin alembic.autogenerate.defaults
+setup plugin alembic.autogenerate.comments
+
+[2026-05-18 18:43:39.954] [info]  Could not autodetect AIMDO implementation, assuming Nvidia
+comfy-aimdo unsupported operating system: Darwin
+NOTE: comfy-aimdo currently only supports Windows and Linux
+
+[2026-05-18 18:43:40.413] [info]  Adding extra search path custom_nodes /Users/runner/Documents/ComfyUI/custom_nodes
+Adding extra search path download_model_base /Users/runner/Documents/ComfyUI/models
+Adding extra search path custom_nodes /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes
+Setting output directory to: /Users/runner/Documents/ComfyUI/output
+Setting input directory to: /Users/runner/Documents/ComfyUI/input
+Setting user directory to: /Users/runner/Documents/ComfyUI/user
+
+[2026-05-18 18:43:42.154] [info]  [START] Security scan
+[DONE] Security scan
+** ComfyUI startup time: 2026-05-18 18:43:42.153
+** Platform:
+[2026-05-18 18:43:42.155] [info]   Darwin
+** Python version: 3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]
+** Python executable: /Users/runner/Documents/ComfyUI/.venv/bin/python
+** ComfyUI Path: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI
+** ComfyUI Base Folder Path: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI
+** User directory: /Users/runner/Documents/ComfyUI/user
+** ComfyUI-Manager config path: /Users/runner/Documents/ComfyUI/user/__manager/config.ini
+** Log path: /Users/runner/Documents/ComfyUI/user/comfyui.log
+
+[2026-05-18 18:43:42.695] [info]  [ComfyUI-Manager] Skipped fixing the 'comfyui-frontend-package' dependency because the ComfyUI is outdated.
+
+[2026-05-18 18:43:42.696] [info]  [PRE] ComfyUI-Manager
+
+[2026-05-18 18:43:50.507] [info]  Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/Documents/ComfyUI/.venv/lib/python3.12/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
+
+[2026-05-18 18:43:50.546] [info]  Checkpoint files will always be loaded safely.
+
+[2026-05-18 18:43:50.645] [info]  Total VRAM 7168 MB, total RAM 7168 MB
+pytorch version: 2.10.0
+
+[2026-05-18 18:43:50.650] [info]  Mac Version (15, 7, 4)
+
+[2026-05-18 18:43:50.653] [info]  Set vram state to: SHARED
+Device: mps
+
+[2026-05-18 18:43:51.970] [info]  Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+
+[2026-05-18 18:43:58.455] [info]  Python version: 3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]
+
+[2026-05-18 18:43:58.457] [info]  ComfyUI version: 0.21.1
+comfy-aimdo version: 0.3.0
+comfy-kitchen version: 0.2.8
+[Prompt Server] web root: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI/web_custom_versions/desktop_app
+
+[2026-05-18 18:43:58.459] [info]  Asset seeder disabled
+
+[2026-05-18 18:43:58.461] [info]  [START] ComfyUI-Manager
+
+[2026-05-18 18:43:58.940] [info]  [ComfyUI-Manager] Using GitPython backend
+
+[2026-05-18 18:43:59.016] [info]  [ComfyUI-Manager] network_mode: public
+
+[2026-05-18 18:43:59.022] [info]  [ComfyUI-Manager] The matrix sharing feature has been disabled because the `matrix-nio` dependency is not installed.
+	To use this feature, please run the following command:
+	/Users/runner/Documents/ComfyUI/.venv/bin/python -m pip install matrix-nio
+
+
+[2026-05-18 18:44:02.199] [info]  
+Import times for custom nodes:
+   0.0 seconds: /Users/runner/.comfy-test-cache/desktop/ComfyUI.app/Contents/Resources/ComfyUI/custom_nodes/websocket_image_save.py
+
+
+[2026-05-18 18:44:02.221] [info]  Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+
+[2026-05-18 18:44:02.237] [info]  Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+
+[2026-05-18 18:44:02.241] [info]  Running upgrade  -> 0001_assets, Initial assets schema
+Revision ID: 0001_assets
+Revises: None
+Create Date: 2025-12-10 00:00:00
+
+[2026-05-18 18:44:02.291] [info]  Running upgrade 0001_assets -> 0002_merge_to_asset_references, Merge AssetInfo and AssetCacheState into unified asset_references table.
+
+[2026-05-18 18:44:02.338] [info]  Running upgrade 0002_merge_to_asset_references -> 0003_add_metadata_job_id, Add system_metadata and job_id columns to asset_references.
+Change preview_id FK from assets.id to asset_references.id.
+
+[2026-05-18 18:44:02.366] [info]  Database upgraded from None to 0003_add_metadata_job_id
+
+[2026-05-18 18:44:02.423] [info]  Starting server
+
+
+[2026-05-18 18:44:02.423] [info]  To see the GUI go to: http://127.0.0.1:8000
+
