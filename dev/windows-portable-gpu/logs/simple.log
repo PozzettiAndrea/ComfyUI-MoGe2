@@ -1,0 +1,38 @@
+Capturing execution frames: simple.json
+  Frame 1 saved (frame_000.jpg, t=0.0s)
+  Validating workflow...
+  Queuing workflow for execution...
+  Frame 2 saved (frame_001.jpg, t=2.3s)
+  [capture-periodic] freeze=3ms shot=120ms unfreeze=4ms saved=True
+  Frame 3 saved (frame_002.jpg, t=4.6s)
+  [capture-periodic] freeze=2ms shot=92ms unfreeze=3ms saved=True
+  [capture-loop] iter=50 t=5.9s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=9.6/23.9GB (40%) swap=0.0/3.9GB (0%) cpu=13% browser_rss=0.68GB
+  [capture-loop] iter=100 t=11.9s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=10.1/23.9GB (42%) swap=0.0/3.9GB (0%) cpu=13% browser_rss=0.68GB
+  [capture-loop] iter=150 t=17.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=9.1/23.9GB (38%) swap=0.0/3.9GB (0%) cpu=15% browser_rss=0.69GB
+  Frame 4 saved (frame_003.jpg, t=19.7s)
+  [capture-periodic] freeze=3ms shot=107ms unfreeze=5ms saved=True
+  Frame 5 saved (frame_004.jpg, t=21.9s)
+  [capture-periodic] freeze=4ms shot=114ms unfreeze=5ms saved=True
+  [capture-loop] iter=200 t=23.8s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=5 ram=9.4/23.9GB (39%) swap=0.0/3.9GB (0%) cpu=24% browser_rss=0.69GB
+  Frame 6 saved (frame_005.jpg, t=24.1s)
+  [capture-periodic] freeze=4ms shot=105ms unfreeze=7ms saved=True
+  Frame 7 saved (frame_006.jpg, t=26.3s)
+  [capture-periodic] freeze=2ms shot=85ms unfreeze=3ms saved=True
+  Frame 8 saved (frame_007.jpg, t=28.4s)
+  [capture-periodic] freeze=2ms shot=93ms unfreeze=5ms saved=True
+  [capture-loop] iter=250 t=29.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=9.2/23.9GB (39%) swap=0.0/3.9GB (0%) cpu=19% browser_rss=0.63GB
+  [capture-loop] iter=300 t=35.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=9.3/23.9GB (39%) swap=0.0/3.9GB (0%) cpu=20% browser_rss=0.63GB
+  [capture-loop] iter=350 t=41.0s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=10.9/23.9GB (46%) swap=0.0/3.9GB (0%) cpu=26% browser_rss=0.63GB
+  Node executed (1 total), capturing...
+  Frame 9 saved (frame_008.jpg, t=45.8s)
+  [capture-node] freeze=4ms shot=114ms unfreeze=11ms saved=True
+  Node executed (2 total), capturing...
+  Frame 10 saved (frame_009.jpg, t=46.2s)
+  [capture-node] freeze=3ms shot=114ms unfreeze=0ms saved=True
+  Execution complete (t=46.3s)
+  Captured 10 unique frames over 46.4s
+  [debug] iframes: 0
+  [timing] trigger_3d_previews: 0.0s
+  Saved high-quality screenshot: simple_executed.png
+  [timing] final_screenshot: 0.3s
+    Captured 11 video frames
