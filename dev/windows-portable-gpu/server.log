@@ -5,16 +5,16 @@ setup plugin alembic.autogenerate.constraints
 setup plugin alembic.autogenerate.defaults
 setup plugin alembic.autogenerate.comments
 [comfy-env] ComfyUI-MoGe2: 1 isolation env(s):
-[comfy-env]   nodes -> C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2\nodes
+[comfy-env]   nodes -> C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2\nodes
 [comfy-env] Workspace: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env
-[comfy-env]     env: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes  [OK]
+[comfy-env]     env: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default  [OK]
 [comfy-env] prestartup complete
 
 Prestartup times for custom nodes:
-   0.2 seconds: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
+   0.2 seconds: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
 
-Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
 Found comfy_kitchen backend cuda: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
 Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
 Checkpoint files will always be loaded safely.
 Total VRAM 8151 MB, total RAM 24466 MB
@@ -26,7 +26,7 @@ Enabled pinned memory 9786.0
 Using pytorch attention
 aimdo: src-win/cuda-detour.c:38:INFO:aimdo_setup_hooks: installing 6 hooks
 aimdo: src-win/cuda-detour.c:28:DEBUG:install_hook_entries: hooks successfully installed
-aimdo: src-win/shmem-detect.c:80:INFO:comfy-aimdo WDDM adapter match: NVIDIA GeForce RTX 5060 runtime_luid=00000000:00877def dxgi_luid=00000000:00877def
+aimdo: src-win/shmem-detect.c:80:INFO:comfy-aimdo WDDM adapter match: NVIDIA GeForce RTX 5060 runtime_luid=00000000:006ee7a7 dxgi_luid=00000000:006ee7a7
 aimdo: src/control.c:152:INFO:comfy-aimdo inited for GPU: NVIDIA GeForce RTX 5060 (VRAM: 8150 MB)
 DynamicVRAM support detected and enabled
 Python version: 3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]
@@ -36,36 +36,36 @@ comfy-kitchen version: 0.2.8
 ****** User settings have been changed to be stored on the server instead of browser storage. ******
 ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
 ComfyUI frontend version: 1.43.18
-[Prompt Server] web root: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\python_embeded\Lib\site-packages\comfyui_frontend_package\static
+[Prompt Server] web root: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\python_embeded\Lib\site-packages\comfyui_frontend_package\static
 Asset seeder disabled
-[comfy-env] Version: 0.3.89
+[comfy-env] Version: 0.4.1
 [comfy-env] register_nodes: ComfyUI-MoGe2
-[comfy-env] ComfyUI source dir: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI
+[comfy-env] ComfyUI source dir: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI
 [comfy-env] Found 1 isolation env(s)
 [comfy-env] Scanning nodes metadata (isolation root)...
-[comfy-env] moge2-nodes: Library/bin has 237 DLLs
-[comfy-env] Metadata scan: C:\Users\ContainerUser\.pixi\bin\pixi.exe run --as-is --manifest-path C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\pixi.toml -e moge2-nodes python C:\Users\ContainerUser\AppData\Local\Temp\comfy_meta_57toutpg.py C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2 nodes C:\Users\ContainerUser\AppData\Local\Temp\comfy_meta_out_em_xk0c7.pkl
+[comfy-env] default: Library/bin has 237 DLLs
+[comfy-env] Metadata scan: C:\Users\ContainerUser\.pixi\bin\pixi.exe run --as-is --manifest-path C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\pixi.toml -e default python C:\Users\ContainerUser\AppData\Local\Temp\comfy_meta_eewb7yf5.py C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2 nodes C:\Users\ContainerUser\AppData\Local\Temp\comfy_meta_out_v91qm_v9.pkl
 [comfy-env] Scan env PATH for nodes:
-[comfy-env]   [0] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes
-[comfy-env]   [1] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\Library\bin
-[comfy-env]   [2] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\Scripts
-[comfy-env]   [3] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\Lib\site-packages\bpy
+[comfy-env]   [0] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default
+[comfy-env]   [1] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\Library\bin
+[comfy-env]   [2] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\Scripts
+[comfy-env]   [3] C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\Lib\site-packages\bpy
 [comfy-env]   [4] C:\Windows\System32
 [comfy-env]   [5] C:\Windows
 [comfy-env]   [6] C:\Windows\System32\Wbem
 [comfy-env] Metadata scan stderr for nodes:
-[comfy-env]   [meta-scan] importing nodes from C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
+[comfy-env]   [meta-scan] importing nodes from C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
 [comfy-env]   ERROR:root:Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
 [comfy-env]   [meta-scan] import OK
-[comfy-env] Scanned nodes: 3 nodes (17.2s)
-[comfy-env] Scanned nodes root: 3 nodes (17.2s)
+[comfy-env] Scanned nodes: 3 nodes (16.7s)
+[comfy-env] Scanned nodes root: 3 nodes (16.7s)
 [comfy-env] Imported nodes root: 3 nodes (isolation)
 [comfy-env] Registered 3 total nodes
 
 Import times for custom nodes:
-   0.0 seconds: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\websocket_image_save.py
-   0.0 seconds: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-  17.7 seconds: C:\workspaces\MoGe2-2030\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
+   0.0 seconds: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\websocket_image_save.py
+   0.0 seconds: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+  17.2 seconds: C:\workspaces\MoGe2-2213\portable-comfyui\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-MoGe2
 
 Context impl SQLiteImpl.
 Will assume non-transactional DDL.
@@ -81,7 +81,7 @@ Change preview_id FK from assets.id to asset_references.id.
 Database upgraded from None to 0003_add_metadata_job_id
 Starting server
 
-To see the GUI go to: http://127.0.0.1:41896
+To see the GUI go to: http://127.0.0.1:41887
 === /validate endpoint called ===
 Received JSON with keys: ['prompt']
 Prompt has 5 nodes
@@ -95,43 +95,44 @@ Prompt has 5 nodes
     Inputs: {"images": ["3", 0]}
   Node 5: PreviewImage
     Inputs: {"images": ["3", 2]}
-Generated prompt_id: a5e753e1-90e9-45ca-bf72-7e8b857667a0
+Generated prompt_id: c1b65b78-71f9-4ba4-99ba-9e710dccd0bb
 Calling execution.validate_prompt()...
 Validation result: valid=True
 === Validation PASSED ===
 got prompt
 [comfy-env] Running DownloadAndLoadMoGe2Model: model: 'moge-2-vitl-normal.pt', precision: 'auto', attention: 'auto'
 [VRAM] Before DownloadAndLoadMoGe2Model: 1130 / 8150 MB
-[comfy-env] SubprocessWorker: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\python.exe
-[comfy-env] env_vars: {'COMFYUI_BASE': 'C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI'}
+[comfy-env] SubprocessWorker: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\python.exe
+[comfy-env] env_vars: {'COMFYUI_BASE': 'C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI'}
 [SubprocessWorker] call_method: nodes.load_model.DownloadAndLoadMoGe2Model.EXECUTE_NORMALIZED
 [SubprocessWorker] acquired lock, ensuring started...
-[comfy-env] moge2-nodes: Library/bin has 237 DLLs
-[ComfyUI-MoGe2] python: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\python.exe
-[ComfyUI-MoGe2] sys_path sent to worker: ['C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI', 'C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\.pixi\\envs\\moge2-nodes\\Lib\\site-packages', 'C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2']
-[SubprocessWorker] is_pixi=True, python=C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\python.exe
-[SubprocessWorker] launching cmd=['C:\\Users\\ContainerUser\\.pixi\\bin\\pixi.exe', 'run', '--as-is', '--manifest-path', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\pixi.toml', '-e', 'moge2-nodes', 'python', 'C:\\Users\\ContainerUser\\AppData\\Local\\Temp\\comfyui_pvenv_39zdkrg6\\persistent_worker.py', 'tcp://127.0.0.1:64247']...
+[comfy-env] default: Library/bin has 237 DLLs
+[ComfyUI-MoGe2] python: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\python.exe
+[ComfyUI-MoGe2] sys_path sent to worker: ['C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI', 'C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\envs\\moge2-nodes\\.pixi\\envs\\default\\Lib\\site-packages', 'C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2']
+[SubprocessWorker] is_pixi=True, python=C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\python.exe
+[SubprocessWorker] launching cmd=['C:\\Users\\ContainerUser\\.pixi\\bin\\pixi.exe', 'run', '--as-is', '--manifest-path', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\envs\\moge2-nodes\\pixi.toml', '-e', 'default', 'python', 'C:\\Users\\ContainerUser\\AppData\\Local\\Temp\\comfyui_pvenv_au9rzxi5\\persistent_worker.py', 'tcp://127.0.0.1:58533']...
 [worker:ComfyUI-MoGe2] ERROR: Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
 [SubprocessWorker] worker started/confirmed
 [SubprocessWorker] serializing kwargs to shm...
 [SubprocessWorker] created 0 shm blocks
 [SubprocessWorker] sending request via socket...
 [SubprocessWorker] call_id=1 sending call_method
-model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]model.pt:   5%|▌         | 67.1M/1.32G [00:03<01:00, 20.6MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  10%|█         | 134M/1.32G [00:03<00:26, 45.1MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  20%|██        | 268M/1.32G [00:04<00:12, 84.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  25%|██▌       | 335M/1.32G [00:06<00:18, 54.0MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  30%|███       | 402M/1.32G [00:08<00:20, 45.5MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  41%|████      | 537M/1.32G [00:08<00:09, 79.4MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  46%|████▌     | 604M/1.32G [00:09<00:07, 96.4MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  51%|█████     | 671M/1.32G [00:09<00:06, 104MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  61%|██████    | 805M/1.32G [00:11<00:05, 97.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  77%|███████▋  | 1.02G/1.32G [00:12<00:02, 134MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-model.pt:  96%|█████████▌| 1.27G/1.32G [00:12<00:00, 220MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[worker:ComfyUI-MoGe2] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]model.pt:   5%|▌         | 67.1M/1.32G [00:03<01:10, 17.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  19%|█▉        | 256M/1.32G [00:04<00:13, 82.0MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
 [SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  25%|██▌       | 335M/1.32G [00:08<00:24, 40.6MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  35%|███▌      | 469M/1.32G [00:08<00:12, 68.4MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  41%|████      | 537M/1.32G [00:08<00:09, 83.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  51%|█████     | 671M/1.32G [00:11<00:09, 68.0MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  66%|██████▌   | 872M/1.32G [00:11<00:03, 118MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  71%|███████   | 939M/1.32G [00:11<00:02, 132MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt:  81%|████████  | 1.07G/1.32G [00:12<00:01, 159MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 268MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
 model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 108MB/s]
 [SubprocessWorker] got response: ok
-[comfy-env] DownloadAndLoadMoGe2Model done (26.49s): result: NodeOutput
+[comfy-env] DownloadAndLoadMoGe2Model done (26.41s): result: NodeOutput
 [VRAM] After DownloadAndLoadMoGe2Model: 1130 / 8150 MB
 [comfy-env] Running MoGe2Inference: resolution_level: 9, num_tokens: 0, fov_x_deg: 0.0, force_projection: True, apply_mask: True, moge_model: dict, images: torch.float32 [1,1000,1500,3] cpu
 [VRAM] Before MoGe2Inference: 1130 / 8150 MB
@@ -152,22 +153,22 @@ got prompt
 [SubprocessWorker] callback 'request_vram_budget' from call_id=2
 [comfy-env] VRAM request: 0.66GB, free before eviction: 7.36GB
 [comfy-env] VRAM after eviction: 7.36GB
-[worker:ComfyUI-MoGe2] [VRAM] +248MB (now 248MB) reserved=256MB peak=248MB
-[worker:ComfyUI-MoGe2] [VRAM] +702MB (now 951MB) reserved=1536MB peak=951MB
+[worker:ComfyUI-MoGe2] [VRAM] +240MB (now 240MB) reserved=256MB peak=240MB
+[worker:ComfyUI-MoGe2] [VRAM] +710MB (now 951MB) reserved=1568MB peak=951MB
 [SubprocessWorker] callback 'report_progress' from call_id=2
 [SubprocessWorker] got response: ok
 [comfy-env] Created 1 model patchers: ['MoGeWrapper_1']
-[comfy-env] MoGe2Inference done (18.79s): result: NodeOutput
+[comfy-env] MoGe2Inference done (17.61s): result: NodeOutput
 [VRAM] After MoGe2Inference: 1130 / 8150 MB
 [VRAM] Loaded: SubprocessModel (631 MB)
-Prompt executed in 45.48 seconds
+Prompt executed in 44.21 seconds
 [comfy-env] [VRAM] Before offload 'MoGeWrapper_1' (631 MB) -> cpu: 1130 / 8150 MB
 [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
 [ComfyUI-MoGe2] Health check: failed
 [ComfyUI-MoGe2] Socket unhealthy, restarting worker...
 [comfy-env] Invalidated 1 stale model patchers (will be cleaned up during next unload)
-[comfy-env] moge2-nodes: Library/bin has 237 DLLs
-[ComfyUI-MoGe2] python: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\python.exe
-[ComfyUI-MoGe2] sys_path sent to worker: ['C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI', 'C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\.pixi\\envs\\moge2-nodes\\Lib\\site-packages', 'C:\\workspaces\\MoGe2-2030\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2']
-[SubprocessWorker] is_pixi=True, python=C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\.pixi\envs\moge2-nodes\python.exe
-[SubprocessWorker] launching cmd=['C:\\Users\\ContainerUser\\.pixi\\bin\\pixi.exe', 'run', '--as-is', '--manifest-path', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\pixi.toml', '-e', 'moge2-nodes', 'python', 'C:\\Users\\ContainerUser\\AppData\\Local\\Temp\\comfyui_pvenv_39zdkrg6\\persistent_worker.py', 'tcp://127.0.0.1:55494']...
+[comfy-env] default: Library/bin has 237 DLLs
+[ComfyUI-MoGe2] python: C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\python.exe
+[ComfyUI-MoGe2] sys_path sent to worker: ['C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI', 'C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\envs\\moge2-nodes\\.pixi\\envs\\default\\Lib\\site-packages', 'C:\\workspaces\\MoGe2-2213\\portable-comfyui\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-MoGe2']
+[SubprocessWorker] is_pixi=True, python=C:\Users\ContainerUser\AppData\Local\Programs\comfy-env\envs\moge2-nodes\.pixi\envs\default\python.exe
+[SubprocessWorker] launching cmd=['C:\\Users\\ContainerUser\\.pixi\\bin\\pixi.exe', 'run', '--as-is', '--manifest-path', 'C:\\Users\\ContainerUser\\AppData\\Local\\Programs\\comfy-env\\envs\\moge2-nodes\\pixi.toml', '-e', 'default', 'python', 'C:\\Users\\ContainerUser\\AppData\\Local\\Temp\\comfyui_pvenv_au9rzxi5\\persistent_worker.py', 'tcp://127.0.0.1:63900']...
