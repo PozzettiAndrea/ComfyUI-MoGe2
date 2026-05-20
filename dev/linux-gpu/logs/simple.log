@@ -2,8 +2,8 @@ Capturing execution frames: simple.json
   Frame 1 saved (frame_000.jpg, t=0.0s)
   Validating workflow...
   [ComfyUI] === /validate endpoint called ===
-  Queuing workflow for execution...
   [ComfyUI] Received JSON with keys: ['prompt']
+  Queuing workflow for execution...
   [ComfyUI] Prompt has 5 nodes
   [ComfyUI]   Node 1: LoadImage
   [ComfyUI]     Inputs: {"image": "house_indoor.jpg"}
@@ -15,26 +15,26 @@ Capturing execution frames: simple.json
   [ComfyUI]     Inputs: {"images": ["3", 0]}
   [ComfyUI]   Node 5: PreviewImage
   [ComfyUI]     Inputs: {"images": ["3", 2]}
-  [ComfyUI] Generated prompt_id: 322a1353-4fc4-4c11-ba0a-1d5c7c615eb7
+  [ComfyUI] Generated prompt_id: f66681f9-1cde-4390-a8c1-ea18e5012637
   [ComfyUI] Calling execution.validate_prompt()...
   [ComfyUI] Validation result: valid=True
   [ComfyUI] === Validation PASSED ===
   [ComfyUI] got prompt
   [ComfyUI] [comfy-env] Running DownloadAndLoadMoGe2Model: model: 'moge-2-vitl-normal.pt', precision: 'auto', attention: 'auto'
-  [ComfyUI] [comfy-env] SubprocessWorker: /tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
-  [ComfyUI] [VRAM] Before DownloadAndLoadMoGe2Model: 302 / 24124 MB
-  [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/workspaces/MoGe2-1951/ComfyUI'}
+  [ComfyUI] [comfy-env] SubprocessWorker: /tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
+  [ComfyUI] [VRAM] Before DownloadAndLoadMoGe2Model: 8576 / 24124 MB
+  [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/workspaces/MoGe2-1311/ComfyUI'}
   [ComfyUI] [SubprocessWorker] call_method: nodes.load_model.DownloadAndLoadMoGe2Model.EXECUTE_NORMALIZED
-  [ComfyUI] [ComfyUI-MoGe2] python: /tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
+  [ComfyUI] [ComfyUI-MoGe2] python: /tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
-  [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/workspaces/MoGe2-1951/ComfyUI', '/workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/lib/python3.13/site-packages', '/workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2']
-  [ComfyUI] [SubprocessWorker] is_pixi=True, python=/tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
-  [ComfyUI] [SubprocessWorker] launching cmd=['/tmp/comfytest-home/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/tmp/comfytest-home/.ce/pixi.toml', '-e', 'moge2-nodes', 'python', '/tmp/comfyui_pvenv_r08t6rul/persistent_worker.py', 'abstract://comfy_worker_e3294af120de']...
-  [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_e3294af120de (abstract, no filesystem path)
+  [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/workspaces/MoGe2-1311/ComfyUI', '/workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/lib/python3.10/site-packages', '/workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2']
+  [ComfyUI] [SubprocessWorker] is_pixi=True, python=/tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
+  [ComfyUI] [SubprocessWorker] launching cmd=['/tmp/comfytest-home/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/tmp/comfytest-home/.ce/envs/moge2-nodes/pixi.toml', '-e', 'default', 'python', '/tmp/comfyui_pvenv_yc05sgk5/persistent_worker.py', 'abstract://comfy_worker_4c28ac563440']...
+  [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_4c28ac563440 (abstract, no filesystem path)
   [ComfyUI] [worker:ComfyUI-MoGe2] ERROR: Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
   Frame 2 saved (frame_001.jpg, t=2.5s)
+  [capture-periodic] freeze=4ms shot=216ms unfreeze=4ms saved=True
   [ComfyUI] [SubprocessWorker] worker started/confirmed
-  [capture-periodic] freeze=4ms shot=218ms unfreeze=6ms saved=True
   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
   [ComfyUI] [SubprocessWorker] created 0 shm blocks
   [ComfyUI] [SubprocessWorker] sending request via socket...
@@ -43,32 +43,40 @@ Capturing execution frames: simple.json
   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
   [ComfyUI] 
   Frame 3 saved (frame_002.jpg, t=4.9s)
-  [capture-periodic] freeze=4ms shot=224ms unfreeze=4ms saved=True
-  [capture-loop] iter=50 t=6.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.8/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.84GB
+  [capture-periodic] freeze=3ms shot=223ms unfreeze=7ms saved=True
+  [capture-loop] iter=50 t=6.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=6.5/31.2GB (21%) swap=5.5/32.0GB (17%) cpu=5% browser_rss=0.84GB
   [ComfyUI] model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]
-  [ComfyUI] model.pt:  20%|██        | 268M/1.32G [00:05<00:19, 53.3MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-  Frame 4 saved (frame_003.jpg, t=9.6s)
-  [capture-periodic] freeze=3ms shot=218ms unfreeze=10ms saved=True
-  [capture-loop] iter=100 t=12.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=5.4/31.2GB (17%) swap=0.7/32.0GB (2%) cpu=6% browser_rss=0.84GB
+  [ComfyUI] model.pt:   5%|▌         | 67.1M/1.32G [00:03<00:56, 22.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  Frame 4 saved (frame_003.jpg, t=7.2s)
+  [capture-periodic] freeze=9ms shot=222ms unfreeze=3ms saved=True
   [ComfyUI] 
-  [ComfyUI] model.pt:  25%|██▌       | 335M/1.32G [00:10<00:33, 29.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-  Frame 5 saved (frame_004.jpg, t=14.2s)
-  [capture-periodic] freeze=8ms shot=226ms unfreeze=4ms saved=True
+  [ComfyUI] model.pt:  10%|█         | 134M/1.32G [00:04<00:35, 33.9MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
   [ComfyUI] 
-  [ComfyUI] model.pt:  51%|█████     | 671M/1.32G [00:10<00:08, 79.4MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt:  20%|██        | 268M/1.32G [00:05<00:16, 63.7MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  Frame 5 saved (frame_004.jpg, t=9.6s)
+  [capture-periodic] freeze=3ms shot=222ms unfreeze=4ms saved=True
   [ComfyUI] 
-  [ComfyUI] model.pt:  61%|██████    | 805M/1.32G [00:11<00:05, 98.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt:  25%|██▌       | 335M/1.32G [00:06<00:14, 69.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
   [ComfyUI] 
-  [ComfyUI] model.pt:  86%|████████▌ | 1.14G/1.32G [00:12<00:01, 151MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt:  30%|███       | 402M/1.32G [00:07<00:14, 64.0MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
   [ComfyUI] 
-  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 194MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] model.pt:  35%|███▌      | 469M/1.32G [00:07<00:11, 76.1MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  Frame 6 saved (frame_005.jpg, t=11.9s)
+  [capture-periodic] freeze=3ms shot=228ms unfreeze=4ms saved=True
+  [capture-loop] iter=100 t=12.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=6.9/31.2GB (22%) swap=5.5/32.0GB (17%) cpu=7% browser_rss=0.84GB
   [ComfyUI] 
-  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 106MB/s]
+  [ComfyUI] model.pt:  66%|██████▌   | 872M/1.32G [00:11<00:04, 92.3MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt:  81%|████████  | 1.07G/1.32G [00:12<00:01, 132MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 197MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+  [ComfyUI] 
+  [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 104MB/s]
   [ComfyUI] [SubprocessWorker] got response: ok
-  [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (16.17s): result: NodeOutput
-  [ComfyUI] [VRAM] After DownloadAndLoadMoGe2Model: 564 / 24124 MB
+  [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (16.27s): result: NodeOutput
+  [ComfyUI] [VRAM] After DownloadAndLoadMoGe2Model: 8837 / 24124 MB
   [ComfyUI] [comfy-env] Running MoGe2Inference: resolution_level: 9, num_tokens: 0, fov_x_deg: 0.0, force_projection: True, apply_mask: True, moge_model: dict, images: torch.float32 [1,1000,1500,3] cpu
-  [ComfyUI] [VRAM] Before MoGe2Inference: 564 / 24124 MB
+  [ComfyUI] [VRAM] Before MoGe2Inference: 8837 / 24124 MB
   [ComfyUI] [SubprocessWorker] call_method: nodes.nodes_inference.MoGe2Inference.EXECUTE_NORMALIZED
   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
   [ComfyUI] [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
@@ -82,33 +90,35 @@ Capturing execution frames: simple.json
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] _from_shm got dict with keys: ['__type__', 'strategy', 'parent_pid', 'fd', 'storage_size']
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZE TensorRef: tensor_size=[1, 1000, 1500, 3]
   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZED tensor shape: torch.Size([1, 1000, 1500, 3])
-  Frame 6 saved (frame_005.jpg, t=16.6s)
-  [capture-periodic] freeze=17ms shot=229ms unfreeze=2ms saved=True
+  Frame 7 saved (frame_006.jpg, t=16.6s)
+  [capture-periodic] freeze=3ms shot=223ms unfreeze=4ms saved=True
   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: No comfy kitchen, using old apply_rope functions.
-  [capture-loop] iter=150 t=18.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.9/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=9% browser_rss=0.84GB
-  [capture-loop] iter=200 t=24.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.9/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.77GB
+  [capture-loop] iter=150 t=18.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=6.7/31.2GB (22%) swap=5.5/32.0GB (17%) cpu=9% browser_rss=0.85GB
+  Frame 8 saved (frame_007.jpg, t=18.9s)
+  [capture-periodic] freeze=3ms shot=212ms unfreeze=3ms saved=True
+  [capture-loop] iter=200 t=24.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=7.7/31.2GB (25%) swap=5.5/32.0GB (17%) cpu=8% browser_rss=0.77GB
   [ComfyUI] [SubprocessWorker] callback 'request_vram_budget' from call_id=2
-  [ComfyUI] [comfy-env] VRAM request: 0.66GB, free before eviction: 24.71GB
-  [ComfyUI] [comfy-env] VRAM after eviction: 24.71GB
-  [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +611MB (now 611MB) reserved=640MB peak=611MB
+  [ComfyUI] [comfy-env] VRAM request: 0.66GB, free before eviction: 16.03GB
+  [ComfyUI] [comfy-env] VRAM after eviction: 16.03GB
+  [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +208MB (now 208MB) reserved=224MB peak=208MB
+  [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +482MB (now 690MB) reserved=1472MB peak=944MB
   [ComfyUI] [SubprocessWorker] callback 'report_progress' from call_id=2
   [ComfyUI] [SubprocessWorker] got response: ok
   [ComfyUI] [comfy-env] Created 1 model patchers: ['MoGeWrapper_1']
-  [ComfyUI] [comfy-env] MoGe2Inference done (13.74s): result: NodeOutput
-  [ComfyUI] [VRAM] After MoGe2Inference: 2154 / 24124 MB
+  [ComfyUI] [comfy-env] MoGe2Inference done (12.16s): result: NodeOutput
+  [ComfyUI] [VRAM] After MoGe2Inference: 10427 / 24124 MB
   [ComfyUI] [VRAM] Loaded: SubprocessModel (631 MB)
   Node executed (1 total), capturing...
-  [ComfyUI] Prompt executed in 30.28 seconds
-  Frame 7 saved (frame_006.jpg, t=30.8s)
-  [capture-node] freeze=3ms shot=239ms unfreeze=11ms saved=True
-  [capture-loop] iter=250 t=31.2s state={'complete': True, 'error': None, 'executedCount': 2, 'wsState': 1} eval_ms=3 ram=7.2/31.2GB (23%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.81GB
+  [ComfyUI] Prompt executed in 28.75 seconds
+  Frame 9 saved (frame_008.jpg, t=29.3s)
+  [capture-node] freeze=4ms shot=255ms unfreeze=13ms saved=True
   Node executed (2 total), capturing...
-  Frame 8 saved (frame_007.jpg, t=31.4s)
-  [capture-node] freeze=3ms shot=254ms unfreeze=0ms saved=True
-  Execution complete (t=31.4s)
-  Captured 8 unique frames over 31.73s
+  Frame 10 saved (frame_009.jpg, t=29.9s)
+  [capture-node] freeze=4ms shot=251ms unfreeze=0ms saved=True
+  Execution complete (t=29.9s)
+  Captured 10 unique frames over 30.27s
   [debug] iframes: 0
   [timing] trigger_3d_previews: 0.0s
   Saved high-quality screenshot: simple_executed.png
   [timing] final_screenshot: 0.6s
-    Captured 9 video frames
+    Captured 11 video frames

@@ -1,345 +1,355 @@
-[00:00] Crash dump logging enabled: /logs/MoGe2-1951/dev/linux-gpu/crash_dump.log
+[00:00] Crash dump logging enabled: /logs/MoGe2-1311/dev/linux-gpu/crash_dump.log
 [00:00] 
-[00:00] [1/5] SYNTAX
-[00:00] ----------------------------------------
-[00:00] 
+[00:01] [1/5] SYNTAX
+[00:03] ----------------------------------------
+[00:04] 
 [DEBUG] server=None, api=None
-[00:00] Found pyproject.toml (modern format)
-[00:00] Found requirements.txt (legacy format)
-[00:00] Unicode check: OK (all characters cp1252-safe)
-[00:00] Forbidden patterns check: OK
-[00:00] [SYNTAX] PASSED
-[00:00] 
-[00:00] [2/5] INSTALL
-[00:00] ----------------------------------------
-[00:00] 
+[00:05] Found pyproject.toml (modern format)
+[00:05] Found requirements.txt (legacy format)
+[00:06] Unicode check: OK (all characters cp1252-safe)
+[00:07] Forbidden patterns check: OK
+[00:08] [SYNTAX] PASSED
+[00:09] 
+[00:09] [2/5] INSTALL
+[00:10] ----------------------------------------
+[00:10] 
 [DEBUG] server=None, api=None
-[00:00] 
+[00:10] 
 Setting up ComfyUI...
-[00:00] Creating virtual environment...
-[00:00] Running: uv venv /workspaces/MoGe2-1951/.venv --python 3.13
-[00:00] torch_version='2.10.0' -> pinning torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
-[00:00] Cloning ComfyUI (latest)...
-[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /workspaces/MoGe2-1951/ComfyUI
-[00:02] Pinning torch family from https://download.pytorch.org/whl/cu128: torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
-[00:02] Running: uv pip install --python /workspaces/MoGe2-1951/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
-[01:21] Installing ComfyUI requirements...
-[01:21] Running: uv pip install --python /workspaces/MoGe2-1951/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match -r /workspaces/MoGe2-1951/ComfyUI/requirements.txt
-[01:33] 
+[00:12] Creating virtual environment...
+[00:12] Running: uv venv /workspaces/MoGe2-1311/.venv --python 3.10
+[00:14] torch_version='2.10.0' -> pinning torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
+[00:14] Cloning ComfyUI (latest)...
+[00:14] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /workspaces/MoGe2-1311/ComfyUI
+[00:26] Pinning torch family from https://download.pytorch.org/whl/cu128: torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
+[00:26] Running: uv pip install --python /workspaces/MoGe2-1311/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0
+[03:00] Installing ComfyUI requirements...
+[03:01] Running: uv pip install --python /workspaces/MoGe2-1311/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match -r /workspaces/MoGe2-1311/ComfyUI/requirements.txt
+[03:34] 
 Installing custom node...
-[01:34] Copying ComfyUI-MoGe2 to custom_nodes/...
-[01:34] Installing node requirements...
-[01:34] Running: uv pip install --python /workspaces/MoGe2-1951/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match -r /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2/requirements.txt
-[01:36] 
+[03:37] Copying ComfyUI-MoGe2 to custom_nodes/...
+[03:39] Installing node requirements...
+[03:40] Running: uv pip install --python /workspaces/MoGe2-1311/.venv/bin/python --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.org/simple --index-strategy unsafe-best-match -r /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2/requirements.txt
+[03:48] 
 Running install.py...
-[01:36] Running: /workspaces/MoGe2-1951/.venv/bin/python /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2/install.py
-[01:39]   [comfy-env] _discover: scanning /workspaces/MoGe2-1951/ComfyUI/custom_nodes
-[01:39]   [comfy-env] _discover: ComfyUI-MoGe2 -> moge2-nodes (custom_nodes/ComfyUI-MoGe2/nodes/comfy-env.toml)
-[01:39]   [comfy-env] Workspace: /tmp/comfytest-home/.ce
-[01:39]   [comfy-env] ComfyUI: /workspaces/MoGe2-1951/ComfyUI
-[01:39]   [comfy-env] Found 1 node config(s):
-[01:39]     - moge2-nodes <- custom_nodes/ComfyUI-MoGe2/nodes/comfy-env.toml (python=host)
-[01:39]   [comfy-env] Bootstrap interpreter has python 3.13 + torch 2.10.0 (cu128). Looking for cuda-only wheels matching cu128/torch2.10/cp313.
-[01:39]   [comfy-env] GPU: Detection: smi
-[01:39]   Driver: 580.126.20
-[01:39]   CUDA: 13.0
-[01:39]   Recommended: CUDA 13.0
-[01:39]   
-[01:39]     GPU 0: NVIDIA GeForce RTX 3090 (sm_86) [Ampere] 24576MB
-[01:39]   [comfy-env] Comfyui feature -> torch 2.10.0 from https://download.pytorch.org/whl/cu128 (CUDA 12.8 via bootstrap torch)
-[01:39]   [comfy-env] cuda-wheels: 2 package(s) need a matched (cuda, torch, python) combo: ['sageattention', 'flash_attn']
-[01:39]   [comfy-env] cuda-wheels tier 1 (bootstrap): probing cu12.8/torch2.10/cp313
-[01:39]   [cuda-wheels] Looking up sageattention: cu128 torch2.10 cp313 manylinux linux
-[01:39]   [cuda-wheels]   Found: sageattention-2.2.0+cu128torch2.10-cp313-cp313-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl
-[01:39]   [cuda-wheels] Looking up flash_attn: cu128 torch2.10 cp313 manylinux linux
-[01:39]   [cuda-wheels]   Found: flash_attn-2.8.3+cu128torch2.10-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
-[01:39]   [comfy-env] cuda-wheels combo: cu12.8/torch2.10 (bootstrap matches; per-node envs will pin to this)
-[01:39]   [comfy-env] Host glibc 2.35 -> system-requirements
-[01:39]   [cuda-wheels] Looking up sageattention: cu128 torch2.10 cp313 manylinux linux
-[01:39]   [cuda-wheels]   Found: sageattention-2.2.0+cu128torch2.10-cp313-cp313-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl
-[01:39]   [cuda-wheels] Looking up flash_attn: cu128 torch2.10 cp313 manylinux linux
-[01:39]   [cuda-wheels]   Found: flash_attn-2.8.3+cu128torch2.10-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
-[01:40]   [comfy-env] moge2-nodes: cuda-wheels deferred for post-pixi install (sageattention, flash_attn)
-[01:40]   Generated /tmp/comfytest-home/.ce/pixi.toml
-[01:40]   [comfy-env] Installing 1 environment(s):
-[01:40]     - moge2-nodes (python=host, 12 pypi deps, 2 cuda wheels)
-[01:40]   [comfy-env] Running `pixi install -e moge2-nodes`...
-[01:47]      WARN Skipped running the post-link scripts because `run-post-link-scripts` = `false`
-[01:47]     	- bin/.librsvg-pre-unlink.sh
-[01:47]     To enable them, run:
-[01:47]     	pixi config set --local run-post-link-scripts insecure
-[01:47]     More info:
-[01:47]     	https://pixi.sh/latest/reference/pixi_configuration/#run-post-link-scripts
-[03:18]     The moge2-nodes environment has been installed.
-[03:18]   [comfy-env] moge2-nodes: installing cuda-wheels with --no-deps (sageattention, flash_attn)
-[03:18]     Using Python 3.13.13 environment at: .pixi/envs/moge2-nodes
-[03:21]     Resolved 2 packages in 2.56s
-[03:21]     Downloading sageattention (53.2MiB)
-[03:21]     Downloading flash-attn (241.9MiB)
-[03:23]      Downloaded sageattention
-[03:31]      Downloaded flash-attn
-[03:31]     Prepared 2 packages in 10.08s
-[03:31]     Installed 2 packages in 10ms
-[03:31]      + flash-attn==2.8.3+cu128torch2.10 (from https://github.com/PozzettiAndrea/cuda-wheels/releases/download/flash_attn-latest/flash_attn-2.8.3%2Bcu128torch2.10-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl)
-[03:31]      + sageattention==2.2.0+cu128torch2.10 (from https://github.com/PozzettiAndrea/cuda-wheels/releases/download/sageattention-latest/sageattention-2.2.0%2Bcu128torch2.10-cp313-cp313-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl)
-[03:31]   [comfy-env] Recorded install hash ac0a020d7840 -> /tmp/comfytest-home/.ce/install.hash
-[03:31]   [comfy-env] Install log: /tmp/comfytest-home/.ce/install.log
-[03:31]   
-[03:31]   Installation complete!
-[03:31] Installing validation endpoint...
-[03:31]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[03:31] Running: git clone --depth 1 https://x-access-token:***@github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[03:31] CUDA packages absent (will mock): sageattention, flash_attn
-[03:31] [INSTALL] PASSED
-[03:31] 
-[03:31] [3/5] REGISTRATION
-[03:31] ----------------------------------------
-[03:31] 
+[03:48] Running: /workspaces/MoGe2-1311/.venv/bin/python /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2/install.py
+[03:57]   [comfy-env] _discover: scanning /workspaces/MoGe2-1311/ComfyUI/custom_nodes
+[03:58]   [comfy-env] _discover: ComfyUI-MoGe2 -> moge2-nodes (custom_nodes/ComfyUI-MoGe2/nodes/comfy-env.toml)
+[03:59]   [comfy-env] Workspace: /tmp/comfytest-home/.ce
+[04:00]   [comfy-env] ComfyUI: /workspaces/MoGe2-1311/ComfyUI
+[04:00]   [comfy-env] Found 1 node config(s):
+[04:00]     - moge2-nodes <- custom_nodes/ComfyUI-MoGe2/nodes/comfy-env.toml (python=host)
+[04:00]   [comfy-env] Bootstrap interpreter has python 3.10 + torch 2.10.0 (cu128). Looking for cuda-only wheels matching cu128/torch2.10/cp310.
+[04:00]   [comfy-env] GPU: Detection: smi
+[04:00]   Driver: 580.126.20
+[04:02]   CUDA: 13.0
+[04:02]   Recommended: CUDA 13.0
+[04:03]   
+[04:03]     GPU 0: NVIDIA GeForce RTX 3090 (sm_86) [Ampere] 24576MB
+[04:03]   [comfy-env] Comfyui feature -> torch 2.10.0 from https://download.pytorch.org/whl/cu128 (CUDA 12.8 via bootstrap torch)
+[04:04]   [comfy-env] cuda-wheels: 2 package(s) need a matched (cuda, torch, python) combo: ['sageattention', 'flash_attn']
+[04:05]   [comfy-env] cuda-wheels tier 1 (bootstrap): probing cu12.8/torch2.10/cp310
+[04:07]   [cuda-wheels] Looking up sageattention: cu128 torch2.10 cp310 manylinux linux
+[04:07]   [cuda-wheels]   Found: sageattention-2.2.0+cu128torch2.10-cp310-cp310-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl
+[04:08]   [cuda-wheels] Looking up flash_attn: cu128 torch2.10 cp310 manylinux linux
+[04:08]   [cuda-wheels]   Found: flash_attn-2.8.3+cu128torch2.10-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
+[04:09]   [comfy-env] cuda-wheels combo: cu12.8/torch2.10 (bootstrap matches; per-node envs will pin to this)
+[04:10]   [comfy-env] Writing 1 per-env manifest(s):
+[04:11]     - moge2-nodes: /tmp/comfytest-home/.ce/envs/moge2-nodes/pixi.toml
+[04:12]   [cuda-wheels] Looking up sageattention: cu128 torch2.10 cp310 manylinux linux
+[04:13]   [cuda-wheels]   Found: sageattention-2.2.0+cu128torch2.10-cp310-cp310-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl
+[04:15]   [cuda-wheels] Looking up flash_attn: cu128 torch2.10 cp310 manylinux linux
+[04:17]   [cuda-wheels]   Found: flash_attn-2.8.3+cu128torch2.10-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
+[04:19]   [comfy-env] moge2-nodes: cuda-wheels deferred for post-pixi install (sageattention, flash_attn)
+[04:19]   [comfy-env] Installing 1 environment(s):
+[04:21]     - moge2-nodes (python=host, 12 pypi deps, 2 cuda wheels)
+[04:21]   [comfy-env] Running `pixi install --manifest-path /tmp/comfytest-home/.ce/envs/moge2-nodes/pixi.toml` ...
+[04:22]      WARN Skipped running the post-link scripts because `run-post-link-scripts` = `false`
+[04:23]     	- bin/.librsvg-pre-unlink.sh
+[04:23]     To enable them, run:
+[04:23]     	pixi config set --local run-post-link-scripts insecure
+[04:25]     More info:
+[04:26]     	https://pixi.sh/latest/reference/pixi_configuration/#run-post-link-scripts
+[06:12]     The default environment has been installed.
+[06:13]   [comfy-env] moge2-nodes: installing cuda-wheels with --no-deps (sageattention, flash_attn)
+[06:14]     Using Python 3.10.20 environment at: envs/moge2-nodes/.pixi/envs/default
+[06:15]     Resolved 2 packages in 1.66s
+[06:15]     Downloading flash-attn (241.9MiB)
+[06:15]     Downloading sageattention (53.1MiB)
+[06:17]      Downloaded sageattention
+[06:20]      Downloaded flash-attn
+[06:20]     Prepared 2 packages in 5.21s
+[06:21]     Installed 2 packages in 152ms
+[06:21]      + flash-attn==2.8.3+cu128torch2.10 (from https://github.com/PozzettiAndrea/cuda-wheels/releases/download/flash_attn-latest/flash_attn-2.8.3%2Bcu128torch2.10-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl)
+[06:21]      + sageattention==2.2.0+cu128torch2.10 (from https://github.com/PozzettiAndrea/cuda-wheels/releases/download/sageattention-latest/sageattention-2.2.0%2Bcu128torch2.10-cp310-cp310-manylinux_2_34_x86_64.manylinux_2_35_x86_64.whl)
+[06:21]   [comfy-env] Recorded install hash ef09610d43ef -> /tmp/comfytest-home/.ce/install.hash
+[06:22]   [comfy-env] Install log: /tmp/comfytest-home/.ce/install.log
+[06:22]   
+[06:23]   Installation complete!
+[06:23] Installing validation endpoint...
+[06:24]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[06:25] Running: git clone --depth 1 https://x-access-token:***@github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[06:28] CUDA packages absent (will mock): sageattention, flash_attn
+[06:29] [INSTALL] PASSED
+[06:30] 
+[06:30] [3/5] REGISTRATION
+[06:30] ----------------------------------------
+[06:31] 
 [DEBUG] server=None, api=None
-[03:31] 
+[06:32] 
 Starting ComfyUI server...
-[03:31] Starting ComfyUI server on port 41886...
-[03:31] CUDA mock packages: sageattention, flash_attn
-[03:31] Starting ComfyUI server on port 41886...
-[03:31] Waiting for server to be ready (timeout: 600s)...
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.schemas
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.tables
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.types
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.constraints
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.defaults
-[03:33]   [ComfyUI] setup plugin alembic.autogenerate.comments
-[03:33]   [ComfyUI] [comfy-env] ComfyUI-MoGe2: 1 isolation env(s):
-[03:33]   [ComfyUI] [comfy-env]   nodes -> /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes
-[03:33]   [ComfyUI] [comfy-env] Workspace: /tmp/comfytest-home/.ce
-[03:33]   [ComfyUI] [comfy-env]     env: /tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes  [OK]
-[03:33]   [ComfyUI] [comfy-env] prestartup complete
-[03:33]   [ComfyUI] 
-[03:33]   [ComfyUI] Prestartup times for custom nodes:
-[03:33]   [ComfyUI]    0.1 seconds: /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2
-[03:33]   [ComfyUI] 
-[03:40]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
-[03:40]   [ComfyUI] Found comfy_kitchen backend triton: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
-[03:40]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
-[03:40]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
-[03:40]   [ComfyUI] Checkpoint files will always be loaded safely.
-[03:41]   [ComfyUI] Total VRAM 24124 MB, total RAM 31924 MB
-[03:41]   [ComfyUI] pytorch version: 2.10.0+cu128
-[03:41]   [ComfyUI] Set vram state to: NORMAL_VRAM
-[03:41]   [ComfyUI] Device: cuda:0 NVIDIA GeForce RTX 3090 : cudaMallocAsync
-[03:41]   [ComfyUI] Using async weight offloading with 2 streams
-[03:41]   [ComfyUI] Enabled pinned memory 28731.0
-[03:41]   [ComfyUI] working around nvidia conv3d memory bug.
-[03:41]   [ComfyUI] Using pytorch attention
-[03:47]   [ComfyUI] aimdo: /project/src-posix/cuda-funchooks.c:52:DEBUG:aimdo_setup_hooks: hooks successfully installed
-[03:47]   [ComfyUI] aimdo: /project/src/control.c:151:INFO:comfy-aimdo inited for GPU: NVIDIA GeForce RTX 3090 (VRAM: 24124 MB)
-[03:47]   [ComfyUI] DynamicVRAM support detected and enabled
-[03:47]   [ComfyUI] Python version: 3.13.13 (main, May 10 2026, 19:26:54) [Clang 22.1.3 ]
-[03:47]   [ComfyUI] ComfyUI version: 0.21.1
-[03:47]   [ComfyUI] comfy-aimdo version: 0.3.0
-[03:47]   [ComfyUI] comfy-kitchen version: 0.2.8
-[03:47]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[03:47]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[03:47]   [ComfyUI] comfyui-frontend-package version: 1.43.18
-[03:47]   [ComfyUI] comfyui-workflow-templates version: 0.9.77
-[03:47]   [ComfyUI] comfyui-embedded-docs version: 0.5.0
-[03:47]   [ComfyUI] comfy-kitchen version: 0.2.8
-[03:47]   [ComfyUI] comfy-aimdo version: 0.3.0
-[03:47]   [ComfyUI] [Prompt Server] web root: /workspaces/MoGe2-1951/.venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[03:47]   [ComfyUI] Asset seeder disabled
-[03:50]   [ComfyUI] [comfy-env] Version: 0.3.89
-[03:50]   [ComfyUI] [comfy-env] register_nodes: ComfyUI-MoGe2
-[03:50]   [ComfyUI] [comfy-env] ComfyUI source dir: /workspaces/MoGe2-1951/ComfyUI
-[03:50]   [ComfyUI] [comfy-env] Found 1 isolation env(s)
-[03:50]   [ComfyUI] [comfy-env] Scanning nodes metadata (isolation root)...
-[03:50]   [ComfyUI] [comfy-env] Metadata scan: /tmp/comfytest-home/.pixi/bin/pixi run --as-is --manifest-path /tmp/comfytest-home/.ce/pixi.toml -e moge2-nodes python /tmp/comfy_meta_ez0nubhh.py /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2 nodes /tmp/comfy_meta_out_91qzw8nt.pkl
-[03:50]   [ComfyUI] [comfy-env] Scan env PATH for nodes:
-[03:50]   [ComfyUI] [comfy-env]   [0] /tmp/comfytest-tools/bin
-[03:50]   [ComfyUI] [comfy-env]   [1] /opt/uv/bin
-[03:50]   [ComfyUI] [comfy-env]   [2] /usr/local/sbin
-[03:50]   [ComfyUI] [comfy-env]   [3] /usr/local/bin
-[03:50]   [ComfyUI] [comfy-env]   [4] /usr/sbin
-[03:50]   [ComfyUI] [comfy-env]   [5] /usr/bin
-[03:50]   [ComfyUI] [comfy-env]   [6] /sbin
-[03:50]   [ComfyUI] [comfy-env]   [7] /bin
-[03:54]   [ComfyUI] [comfy-env] Metadata scan stderr for nodes:
-[03:54]   [ComfyUI] [comfy-env]   [meta-scan] importing nodes from /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2
-[03:54]   [ComfyUI] [comfy-env]   ERROR:root:Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
-[03:54]   [ComfyUI] [comfy-env]   [meta-scan] import OK
-[03:54]   [ComfyUI] [comfy-env] Scanned nodes: 3 nodes (3.7s)
-[03:54]   [ComfyUI] [comfy-env] Scanned nodes root: 3 nodes (3.7s)
-[03:54]   [ComfyUI] [comfy-env] Imported nodes root: 3 nodes (isolation)
-[03:54]   [ComfyUI] [comfy-env] Registered 3 total nodes
-[03:54]   [ComfyUI] 
-[03:54]   [ComfyUI] Import times for custom nodes:
-[03:54]   [ComfyUI]    0.0 seconds: /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[03:54]   [ComfyUI]    0.0 seconds: /workspaces/MoGe2-1951/ComfyUI/custom_nodes/websocket_image_save.py
-[03:54]   [ComfyUI]    3.8 seconds: /workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2
-[03:54]   [ComfyUI] 
-[03:54]   [ComfyUI] Context impl SQLiteImpl.
-[03:54]   [ComfyUI] Will assume non-transactional DDL.
-[03:54]   [ComfyUI] Context impl SQLiteImpl.
-[03:54]   [ComfyUI] Will assume non-transactional DDL.
-[03:54]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[03:54]   [ComfyUI] Revision ID: 0001_assets
-[03:54]   [ComfyUI] Revises: None
-[03:54]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[03:54]   [ComfyUI] Running upgrade 0001_assets -> 0002_merge_to_asset_references, Merge AssetInfo and AssetCacheState into unified asset_references table.
-[03:55]   [ComfyUI] Running upgrade 0002_merge_to_asset_references -> 0003_add_metadata_job_id, Add system_metadata and job_id columns to asset_references.
-[03:55]   [ComfyUI] Change preview_id FK from assets.id to asset_references.id.
-[03:55]   [ComfyUI] Database upgraded from None to 0003_add_metadata_job_id
-[03:55]   [ComfyUI] Starting server
-[03:55]   [ComfyUI] 
-[03:55]   [ComfyUI] To see the GUI go to: http://127.0.0.1:41886
-[03:55] Server responding, waiting for nodes to load...
-[04:15] Server is ready!
-[04:15] Checking for import errors in server logs...
-[04:15] No import errors detected
-[04:16] Found 724 registered nodes
-[04:16] [REGISTRATION] PASSED
-[04:16] 
-[04:16] [4/5] INSTANTIATION
-[04:16] ----------------------------------------
-[04:16] 
-[DEBUG] server=<comfy_test.comfyui.server.ComfyUIServer object at 0x77d6450af130>, api=<comfy_test.comfyui.api.ComfyUIAPI object at 0x77d6448b9750>
-[04:16] Testing node constructors...
-[04:16] All 3 node(s) instantiated successfully!
-[04:16] [INSTANTIATION] PASSED
-[04:16] 
-[04:16] [5/5] EXECUTION
-[04:16] ----------------------------------------
-[04:16] 
-[DEBUG] server=<comfy_test.comfyui.server.ComfyUIServer object at 0x77d6450af130>, api=<comfy_test.comfyui.api.ComfyUIAPI object at 0x77d6448b9750>
-[04:16] GPU runner - will execute 1 workflow(s)
-[04:16] Running 1 workflow(s) (all with videos)...
-[04:16] Installing screenshot dependencies (playwright, pillow)...
-[04:18]   Packages installed, downloading chromium browser...
-[04:42]   Screenshot dependencies installed successfully
-[04:43] Starting headless browser...
-[04:43]   Installing Vulkan stack (apt)...
-[04:43]   Vulkan install error: [Errno 2] No such file or directory: 'sudo'
-[04:43]   GPU detected (no Vulkan) -- using ANGLE/OpenGL rendering
-[04:43] Capturing execution frames: simple.json
-[04:50]   Frame 1 saved (frame_000.jpg, t=0.0s)
-[04:50]   Validating workflow...
-[04:50]   [ComfyUI] === /validate endpoint called ===
-[04:50]   [ComfyUI] Received JSON with keys: ['prompt']
-[04:50]   Queuing workflow for execution...
-[04:50]   [ComfyUI] Prompt has 5 nodes
-[04:50]   [ComfyUI]   Node 1: LoadImage
-[04:50]   [ComfyUI]     Inputs: {"image": "house_indoor.jpg"}
-[04:50]   [ComfyUI]   Node 2: DownloadAndLoadMoGe2Model
-[04:50]   [ComfyUI]     Inputs: {"model": "moge-2-vitl-normal.pt", "precision": "auto", "attention": "auto"}
-[04:50]   [ComfyUI]   Node 3: MoGe2Inference
-[04:50]   [ComfyUI]     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "moge_model": ["2", 0], "images": ["1", 0]}
-[04:50]   [ComfyUI]   Node 4: PreviewImage
-[04:50]   [ComfyUI]     Inputs: {"images": ["3", 0]}
-[04:50]   [ComfyUI]   Node 5: PreviewImage
-[04:50]   [ComfyUI]     Inputs: {"images": ["3", 2]}
-[04:50]   [ComfyUI] Generated prompt_id: 322a1353-4fc4-4c11-ba0a-1d5c7c615eb7
-[04:50]   [ComfyUI] Calling execution.validate_prompt()...
-[04:50]   [ComfyUI] Validation result: valid=True
-[04:50]   [ComfyUI] === Validation PASSED ===
-[04:50]   [ComfyUI] got prompt
-[04:50]   [ComfyUI] [comfy-env] Running DownloadAndLoadMoGe2Model: model: 'moge-2-vitl-normal.pt', precision: 'auto', attention: 'auto'
-[04:50]   [ComfyUI] [comfy-env] SubprocessWorker: /tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
-[04:50]   [ComfyUI] [VRAM] Before DownloadAndLoadMoGe2Model: 302 / 24124 MB
-[04:50]   [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/workspaces/MoGe2-1951/ComfyUI'}
-[04:50]   [ComfyUI] [SubprocessWorker] call_method: nodes.load_model.DownloadAndLoadMoGe2Model.EXECUTE_NORMALIZED
-[04:50]   [ComfyUI] [ComfyUI-MoGe2] python: /tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
-[04:50]   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
-[04:50]   [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/workspaces/MoGe2-1951/ComfyUI', '/workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/lib/python3.13/site-packages', '/workspaces/MoGe2-1951/ComfyUI/custom_nodes/ComfyUI-MoGe2']
-[04:50]   [ComfyUI] [SubprocessWorker] is_pixi=True, python=/tmp/comfytest-home/.ce/.pixi/envs/moge2-nodes/bin/python
-[04:50]   [ComfyUI] [SubprocessWorker] launching cmd=['/tmp/comfytest-home/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/tmp/comfytest-home/.ce/pixi.toml', '-e', 'moge2-nodes', 'python', '/tmp/comfyui_pvenv_r08t6rul/persistent_worker.py', 'abstract://comfy_worker_e3294af120de']...
-[04:50]   [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_e3294af120de (abstract, no filesystem path)
-[04:52]   [ComfyUI] [worker:ComfyUI-MoGe2] ERROR: Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
-[04:53]   [ComfyUI] [SubprocessWorker] worker started/confirmed
-[04:53]   Frame 2 saved (frame_001.jpg, t=2.5s)
-[04:53]   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
-[04:53]   [capture-periodic] freeze=4ms shot=218ms unfreeze=6ms saved=True
-[04:53]   [ComfyUI] [SubprocessWorker] created 0 shm blocks
-[04:53]   [ComfyUI] [SubprocessWorker] sending request via socket...
-[04:53]   [ComfyUI] [SubprocessWorker] call_id=1 sending call_method
-[04:54]   [ComfyUI] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[04:54]   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[04:54]   [ComfyUI] 
-[04:55]   Frame 3 saved (frame_002.jpg, t=4.9s)
-[04:55]   [capture-periodic] freeze=4ms shot=224ms unfreeze=4ms saved=True
-[04:56]   [capture-loop] iter=50 t=6.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.8/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.84GB
-[04:59]   [ComfyUI] model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]
-[04:59]   [ComfyUI] model.pt:  20%|██        | 268M/1.32G [00:05<00:19, 53.3MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:00]   Frame 4 saved (frame_003.jpg, t=9.6s)
-[05:00]   [capture-periodic] freeze=3ms shot=218ms unfreeze=10ms saved=True
-[05:03]   [capture-loop] iter=100 t=12.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=5.4/31.2GB (17%) swap=0.7/32.0GB (2%) cpu=6% browser_rss=0.84GB
-[05:04]   [ComfyUI] 
-[05:04]   [ComfyUI] model.pt:  25%|██▌       | 335M/1.32G [00:10<00:33, 29.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:04]   Frame 5 saved (frame_004.jpg, t=14.2s)
-[05:04]   [capture-periodic] freeze=8ms shot=226ms unfreeze=4ms saved=True
-[05:05]   [ComfyUI] 
-[05:05]   [ComfyUI] model.pt:  51%|█████     | 671M/1.32G [00:10<00:08, 79.4MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:05]   [ComfyUI] 
-[05:05]   [ComfyUI] model.pt:  61%|██████    | 805M/1.32G [00:11<00:05, 98.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:06]   [ComfyUI] 
-[05:06]   [ComfyUI] model.pt:  86%|████████▌ | 1.14G/1.32G [00:12<00:01, 151MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:06]   [ComfyUI] 
-[05:06]   [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 194MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
-[05:07]   [ComfyUI] 
-[05:07]   [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 106MB/s]
-[05:07]   [ComfyUI] [SubprocessWorker] got response: ok
-[05:07]   [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (16.17s): result: NodeOutput
-[05:07]   [ComfyUI] [VRAM] After DownloadAndLoadMoGe2Model: 564 / 24124 MB
-[05:07]   [ComfyUI] [comfy-env] Running MoGe2Inference: resolution_level: 9, num_tokens: 0, fov_x_deg: 0.0, force_projection: True, apply_mask: True, moge_model: dict, images: torch.float32 [1,1000,1500,3] cpu
-[05:07]   [ComfyUI] [VRAM] Before MoGe2Inference: 564 / 24124 MB
-[05:07]   [ComfyUI] [SubprocessWorker] call_method: nodes.nodes_inference.MoGe2Inference.EXECUTE_NORMALIZED
-[05:07]   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
-[05:07]   [ComfyUI] [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
-[05:07]   [ComfyUI] [ComfyUI-MoGe2] Health check: ok
-[05:07]   [ComfyUI] [SubprocessWorker] worker started/confirmed
-[05:07]   [ComfyUI] [comfy-env] PRE-SERIALIZE 'images' shape: torch.Size([1, 1000, 1500, 3])
-[05:07]   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
-[05:07]   [ComfyUI] [SubprocessWorker] created 0 shm blocks
-[05:07]   [ComfyUI] [SubprocessWorker] sending request via socket...
-[05:07]   [ComfyUI] [SubprocessWorker] call_id=2 sending call_method
-[05:07]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] _from_shm got dict with keys: ['__type__', 'strategy', 'parent_pid', 'fd', 'storage_size']
-[05:07]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZE TensorRef: tensor_size=[1, 1000, 1500, 3]
-[05:07]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZED tensor shape: torch.Size([1, 1000, 1500, 3])
-[05:07]   Frame 6 saved (frame_005.jpg, t=16.6s)
-[05:07]   [capture-periodic] freeze=17ms shot=229ms unfreeze=2ms saved=True
-[05:07]   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: No comfy kitchen, using old apply_rope functions.
-[05:09]   [capture-loop] iter=150 t=18.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.9/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=9% browser_rss=0.84GB
-[05:15]   [capture-loop] iter=200 t=24.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=4.9/31.2GB (16%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.77GB
-[05:19]   [ComfyUI] [SubprocessWorker] callback 'request_vram_budget' from call_id=2
-[05:19]   [ComfyUI] [comfy-env] VRAM request: 0.66GB, free before eviction: 24.71GB
-[05:19]   [ComfyUI] [comfy-env] VRAM after eviction: 24.71GB
-[05:19]   [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +611MB (now 611MB) reserved=640MB peak=611MB
-[05:20]   [ComfyUI] [SubprocessWorker] callback 'report_progress' from call_id=2
-[05:20]   [ComfyUI] [SubprocessWorker] got response: ok
-[05:20]   [ComfyUI] [comfy-env] Created 1 model patchers: ['MoGeWrapper_1']
-[05:20]   [ComfyUI] [comfy-env] MoGe2Inference done (13.74s): result: NodeOutput
-[05:20]   [ComfyUI] [VRAM] After MoGe2Inference: 2154 / 24124 MB
-[05:20]   [ComfyUI] [VRAM] Loaded: SubprocessModel (631 MB)
-[05:21]   Node executed (1 total), capturing...
-[05:21]   [ComfyUI] Prompt executed in 30.28 seconds
-[05:21]   Frame 7 saved (frame_006.jpg, t=30.8s)
-[05:21]   [capture-node] freeze=3ms shot=239ms unfreeze=11ms saved=True
-[05:21]   [capture-loop] iter=250 t=31.2s state={'complete': True, 'error': None, 'executedCount': 2, 'wsState': 1} eval_ms=3 ram=7.2/31.2GB (23%) swap=0.7/32.0GB (2%) cpu=7% browser_rss=0.81GB
-[05:21]   Node executed (2 total), capturing...
-[05:22]   Frame 8 saved (frame_007.jpg, t=31.4s)
-[05:22]   [capture-node] freeze=3ms shot=254ms unfreeze=0ms saved=True
-[05:22]   Execution complete (t=31.4s)
-[05:22]   Captured 8 unique frames over 31.73s
-[05:22]   [debug] iframes: 0
-[05:22]   [timing] trigger_3d_previews: 0.0s
-[05:24]   Saved high-quality screenshot: simple_executed.png
-[05:24]   [timing] final_screenshot: 0.6s
-[05:24]   [ComfyUI] [comfy-env] [VRAM] Before offload 'MoGeWrapper_1' (631 MB) -> cpu: 2154 / 24124 MB
-[05:24]   [ComfyUI] [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
-[05:24]   [ComfyUI] [ComfyUI-MoGe2] Health check: ok
-[05:24]   [ComfyUI] [SubprocessWorker] call_id=3 sending model_to_device
-[05:24]   [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] -291MB (now 320MB) reserved=1472MB peak=792MB
-[05:24] Results saved to /logs/MoGe2-1951/dev/linux-gpu/results.json
-[05:24] Model report: 4 files, 1.2 GB -> /logs/MoGe2-1951/dev/linux-gpu/models.json
-[05:24] Saved: /logs/MoGe2-1951/dev/linux-gpu/index.html
-[05:24] [EXECUTION] PASSED
-[05:24] 
+[06:33] Starting ComfyUI server on port 41882...
+[06:33] CUDA mock packages: sageattention, flash_attn
+[06:34] Starting ComfyUI server on port 41882...
+[06:35] Waiting for server to be ready (timeout: 600s)...
+[06:38]   [ComfyUI] setup plugin alembic.autogenerate.schemas
+[06:38]   [ComfyUI] setup plugin alembic.autogenerate.tables
+[06:39]   [ComfyUI] setup plugin alembic.autogenerate.types
+[06:39]   [ComfyUI] setup plugin alembic.autogenerate.constraints
+[06:40]   [ComfyUI] setup plugin alembic.autogenerate.defaults
+[06:41]   [ComfyUI] setup plugin alembic.autogenerate.comments
+[06:41]   [ComfyUI] [comfy-env] ComfyUI-MoGe2: 1 isolation env(s):
+[06:42]   [ComfyUI] [comfy-env]   nodes -> /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2/nodes
+[06:42]   [ComfyUI] [comfy-env] Workspace: /tmp/comfytest-home/.ce
+[06:42]   [ComfyUI] [comfy-env]     env: /tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default  [OK]
+[06:43]   [ComfyUI] [comfy-env] prestartup complete
+[06:43]   [ComfyUI] 
+[06:44]   [ComfyUI] Prestartup times for custom nodes:
+[06:44]   [ComfyUI]    0.2 seconds: /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2
+[06:45]   [ComfyUI] 
+[06:50]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
+[06:50]   [ComfyUI] Found comfy_kitchen backend triton: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+[06:51]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4']}
+[06:51]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+[06:51]   [ComfyUI] Checkpoint files will always be loaded safely.
+[06:51]   [ComfyUI] Total VRAM 24124 MB, total RAM 31924 MB
+[06:52]   [ComfyUI] pytorch version: 2.10.0+cu128
+[06:52]   [ComfyUI] Set vram state to: NORMAL_VRAM
+[06:53]   [ComfyUI] Device: cuda:0 NVIDIA GeForce RTX 3090 : cudaMallocAsync
+[06:53]   [ComfyUI] Using async weight offloading with 2 streams
+[06:53]   [ComfyUI] Enabled pinned memory 28731.0
+[06:53]   [ComfyUI] working around nvidia conv3d memory bug.
+[06:53]   [ComfyUI] Using pytorch attention
+[06:57]   [ComfyUI] aimdo: /project/src-posix/cuda-funchooks.c:52:DEBUG:aimdo_setup_hooks: hooks successfully installed
+[06:57]   [ComfyUI] aimdo: /project/src/control.c:151:INFO:comfy-aimdo inited for GPU: NVIDIA GeForce RTX 3090 (VRAM: 24124 MB)
+[06:58]   [ComfyUI] DynamicVRAM support detected and enabled
+[06:58]   [ComfyUI] Python version: 3.10.20 (main, May 10 2026, 19:27:29) [Clang 22.1.3 ]
+[06:59]   [ComfyUI] ComfyUI version: 0.21.1
+[06:59]   [ComfyUI] comfy-aimdo version: 0.3.0
+[06:59]   [ComfyUI] comfy-kitchen version: 0.2.8
+[06:59]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[06:59]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[06:59]   [ComfyUI] comfyui-frontend-package version: 1.43.18
+[06:59]   [ComfyUI] comfyui-workflow-templates version: 0.9.77
+[06:59]   [ComfyUI] comfyui-embedded-docs version: 0.5.0
+[06:59]   [ComfyUI] comfy-kitchen version: 0.2.8
+[06:59]   [ComfyUI] comfy-aimdo version: 0.3.0
+[06:59]   [ComfyUI] [Prompt Server] web root: /workspaces/MoGe2-1311/.venv/lib/python3.10/site-packages/comfyui_frontend_package/static
+[06:59]   [ComfyUI] Asset seeder disabled
+[07:01]   [ComfyUI] [comfy-env] Version: 0.4.1
+[07:01]   [ComfyUI] [comfy-env] register_nodes: ComfyUI-MoGe2
+[07:01]   [ComfyUI] [comfy-env] ComfyUI source dir: /workspaces/MoGe2-1311/ComfyUI
+[07:01]   [ComfyUI] [comfy-env] Found 1 isolation env(s)
+[07:01]   [ComfyUI] [comfy-env] Scanning nodes metadata (isolation root)...
+[07:01]   [ComfyUI] [comfy-env] Metadata scan: /tmp/comfytest-home/.pixi/bin/pixi run --as-is --manifest-path /tmp/comfytest-home/.ce/envs/moge2-nodes/pixi.toml -e default python /tmp/comfy_meta_c9fj2vl2.py /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2 nodes /tmp/comfy_meta_out_6u76zxf8.pkl
+[07:01]   [ComfyUI] [comfy-env] Scan env PATH for nodes:
+[07:01]   [ComfyUI] [comfy-env]   [0] /tmp/comfytest-tools/bin
+[07:01]   [ComfyUI] [comfy-env]   [1] /opt/uv/bin
+[07:01]   [ComfyUI] [comfy-env]   [2] /usr/local/sbin
+[07:01]   [ComfyUI] [comfy-env]   [3] /usr/local/bin
+[07:01]   [ComfyUI] [comfy-env]   [4] /usr/sbin
+[07:01]   [ComfyUI] [comfy-env]   [5] /usr/bin
+[07:01]   [ComfyUI] [comfy-env]   [6] /sbin
+[07:01]   [ComfyUI] [comfy-env]   [7] /bin
+[07:04]   [ComfyUI] [comfy-env] Metadata scan stderr for nodes:
+[07:04]   [ComfyUI] [comfy-env]   [meta-scan] importing nodes from /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2
+[07:04]   [ComfyUI] [comfy-env]   ERROR:root:Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
+[07:04]   [ComfyUI] [comfy-env]   [meta-scan] import OK
+[07:04]   [ComfyUI] [comfy-env] Scanned nodes: 3 nodes (3.4s)
+[07:04]   [ComfyUI] [comfy-env] Scanned nodes root: 3 nodes (3.4s)
+[07:04]   [ComfyUI] [comfy-env] Imported nodes root: 3 nodes (isolation)
+[07:04]   [ComfyUI] [comfy-env] Registered 3 total nodes
+[07:04]   [ComfyUI] 
+[07:04]   [ComfyUI] Import times for custom nodes:
+[07:04]   [ComfyUI]    0.0 seconds: /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[07:04]   [ComfyUI]    0.0 seconds: /workspaces/MoGe2-1311/ComfyUI/custom_nodes/websocket_image_save.py
+[07:04]   [ComfyUI]    3.6 seconds: /workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2
+[07:04]   [ComfyUI] 
+[07:04]   [ComfyUI] Context impl SQLiteImpl.
+[07:04]   [ComfyUI] Will assume non-transactional DDL.
+[07:04]   [ComfyUI] Context impl SQLiteImpl.
+[07:04]   [ComfyUI] Will assume non-transactional DDL.
+[07:04]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[07:04]   [ComfyUI] Revision ID: 0001_assets
+[07:04]   [ComfyUI] Revises: None
+[07:04]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[07:04]   [ComfyUI] Running upgrade 0001_assets -> 0002_merge_to_asset_references, Merge AssetInfo and AssetCacheState into unified asset_references table.
+[07:04]   [ComfyUI] Running upgrade 0002_merge_to_asset_references -> 0003_add_metadata_job_id, Add system_metadata and job_id columns to asset_references.
+[07:04]   [ComfyUI] Change preview_id FK from assets.id to asset_references.id.
+[07:05]   [ComfyUI] Database upgraded from None to 0003_add_metadata_job_id
+[07:05]   [ComfyUI] Starting server
+[07:05]   [ComfyUI] 
+[07:05]   [ComfyUI] To see the GUI go to: http://127.0.0.1:41882
+[07:05] Server responding, waiting for nodes to load...
+[07:25] Server is ready!
+[07:25] Checking for import errors in server logs...
+[07:25] No import errors detected
+[07:25] Found 726 registered nodes
+[07:25] [REGISTRATION] PASSED
+[07:25] 
+[07:25] [4/5] INSTANTIATION
+[07:25] ----------------------------------------
+[07:25] 
+[DEBUG] server=<comfy_test.comfyui.server.ComfyUIServer object at 0x7f4791d6ce20>, api=<comfy_test.comfyui.api.ComfyUIAPI object at 0x7f4791569600>
+[07:25] Testing node constructors...
+[07:26] All 3 node(s) instantiated successfully!
+[07:26] [INSTANTIATION] PASSED
+[07:26] 
+[07:26] [5/5] EXECUTION
+[07:26] ----------------------------------------
+[07:26] 
+[DEBUG] server=<comfy_test.comfyui.server.ComfyUIServer object at 0x7f4791d6ce20>, api=<comfy_test.comfyui.api.ComfyUIAPI object at 0x7f4791569600>
+[07:26] GPU runner - will execute 1 workflow(s)
+[07:26] Running 1 workflow(s) (all with videos)...
+[07:26] Installing screenshot dependencies (playwright, pillow)...
+[07:27]   Packages installed, downloading chromium browser...
+[07:53]   Screenshot dependencies installed successfully
+[07:54] Starting headless browser...
+[07:54]   Installing Vulkan stack (apt)...
+[07:54]   Vulkan install error: [Errno 2] No such file or directory: 'sudo'
+[07:54]   GPU detected (no Vulkan) -- using ANGLE/OpenGL rendering
+[07:54] Capturing execution frames: simple.json
+[08:01]   Frame 1 saved (frame_000.jpg, t=0.0s)
+[08:01]   Validating workflow...
+[08:01]   [ComfyUI] === /validate endpoint called ===
+[08:01]   [ComfyUI] Received JSON with keys: ['prompt']
+[08:01]   [ComfyUI] Prompt has 5 nodes
+[08:01]   Queuing workflow for execution...
+[08:01]   [ComfyUI]   Node 1: LoadImage
+[08:01]   [ComfyUI]     Inputs: {"image": "house_indoor.jpg"}
+[08:01]   [ComfyUI]   Node 2: DownloadAndLoadMoGe2Model
+[08:01]   [ComfyUI]     Inputs: {"model": "moge-2-vitl-normal.pt", "precision": "auto", "attention": "auto"}
+[08:01]   [ComfyUI]   Node 3: MoGe2Inference
+[08:01]   [ComfyUI]     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "moge_model": ["2", 0], "images": ["1", 0]}
+[08:01]   [ComfyUI]   Node 4: PreviewImage
+[08:01]   [ComfyUI]     Inputs: {"images": ["3", 0]}
+[08:01]   [ComfyUI]   Node 5: PreviewImage
+[08:01]   [ComfyUI]     Inputs: {"images": ["3", 2]}
+[08:01]   [ComfyUI] Generated prompt_id: f66681f9-1cde-4390-a8c1-ea18e5012637
+[08:01]   [ComfyUI] Calling execution.validate_prompt()...
+[08:01]   [ComfyUI] Validation result: valid=True
+[08:01]   [ComfyUI] === Validation PASSED ===
+[08:01]   [ComfyUI] got prompt
+[08:01]   [ComfyUI] [comfy-env] Running DownloadAndLoadMoGe2Model: model: 'moge-2-vitl-normal.pt', precision: 'auto', attention: 'auto'
+[08:01]   [ComfyUI] [VRAM] Before DownloadAndLoadMoGe2Model: 8576 / 24124 MB
+[08:01]   [ComfyUI] [comfy-env] SubprocessWorker: /tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
+[08:01]   [ComfyUI] [comfy-env] env_vars: {'COMFYUI_BASE': '/workspaces/MoGe2-1311/ComfyUI'}
+[08:01]   [ComfyUI] [SubprocessWorker] call_method: nodes.load_model.DownloadAndLoadMoGe2Model.EXECUTE_NORMALIZED
+[08:01]   [ComfyUI] [ComfyUI-MoGe2] python: /tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
+[08:01]   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
+[08:01]   [ComfyUI] [ComfyUI-MoGe2] sys_path sent to worker: ['/workspaces/MoGe2-1311/ComfyUI', '/workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2', '/tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/lib/python3.10/site-packages', '/workspaces/MoGe2-1311/ComfyUI/custom_nodes/ComfyUI-MoGe2']
+[08:01]   [ComfyUI] [SubprocessWorker] is_pixi=True, python=/tmp/comfytest-home/.ce/envs/moge2-nodes/.pixi/envs/default/bin/python
+[08:01]   [ComfyUI] [SubprocessWorker] launching cmd=['/tmp/comfytest-home/.pixi/bin/pixi', 'run', '--as-is', '--manifest-path', '/tmp/comfytest-home/.ce/envs/moge2-nodes/pixi.toml', '-e', 'default', 'python', '/tmp/comfyui_pvenv_yc05sgk5/persistent_worker.py', 'abstract://comfy_worker_4c28ac563440']...
+[08:01]   [ComfyUI] [SubprocessWorker] socket_addr=abstract://comfy_worker_4c28ac563440 (abstract, no filesystem path)
+[08:04]   [ComfyUI] [worker:ComfyUI-MoGe2] ERROR: Failed to import comfy_kitchen, Error: No module named 'comfy_kitchen', fp8 and fp4 support will not be available.
+[08:04]   Frame 2 saved (frame_001.jpg, t=2.5s)
+[08:04]   [capture-periodic] freeze=4ms shot=216ms unfreeze=4ms saved=True
+[08:04]   [ComfyUI] [SubprocessWorker] worker started/confirmed
+[08:04]   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
+[08:04]   [ComfyUI] [SubprocessWorker] created 0 shm blocks
+[08:04]   [ComfyUI] [SubprocessWorker] sending request via socket...
+[08:04]   [ComfyUI] [SubprocessWorker] call_id=1 sending call_method
+[08:05]   [ComfyUI] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[08:05]   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[08:05]   [ComfyUI] 
+[08:06]   Frame 3 saved (frame_002.jpg, t=4.9s)
+[08:06]   [capture-periodic] freeze=3ms shot=223ms unfreeze=7ms saved=True
+[08:07]   [capture-loop] iter=50 t=6.4s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=6.5/31.2GB (21%) swap=5.5/32.0GB (17%) cpu=5% browser_rss=0.84GB
+[08:08]   [ComfyUI] model.pt:   0%|          | 0.00/1.32G [00:00<?, ?B/s]
+[08:08]   [ComfyUI] model.pt:   5%|▌         | 67.1M/1.32G [00:03<00:56, 22.2MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:09]   Frame 4 saved (frame_003.jpg, t=7.2s)
+[08:09]   [capture-periodic] freeze=9ms shot=222ms unfreeze=3ms saved=True
+[08:09]   [ComfyUI] 
+[08:09]   [ComfyUI] model.pt:  10%|█         | 134M/1.32G [00:04<00:35, 33.9MB/s] [SubprocessWorker] callback 'report_progress' from call_id=1
+[08:10]   [ComfyUI] 
+[08:10]   [ComfyUI] model.pt:  20%|██        | 268M/1.32G [00:05<00:16, 63.7MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:11]   Frame 5 saved (frame_004.jpg, t=9.6s)
+[08:11]   [capture-periodic] freeze=3ms shot=222ms unfreeze=4ms saved=True
+[08:11]   [ComfyUI] 
+[08:11]   [ComfyUI] model.pt:  25%|██▌       | 335M/1.32G [00:06<00:14, 69.9MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:12]   [ComfyUI] 
+[08:12]   [ComfyUI] model.pt:  30%|███       | 402M/1.32G [00:07<00:14, 64.0MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:13]   [ComfyUI] 
+[08:13]   [ComfyUI] model.pt:  35%|███▌      | 469M/1.32G [00:07<00:11, 76.1MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:13]   Frame 6 saved (frame_005.jpg, t=11.9s)
+[08:13]   [capture-periodic] freeze=3ms shot=228ms unfreeze=4ms saved=True
+[08:14]   [capture-loop] iter=100 t=12.7s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=6.9/31.2GB (22%) swap=5.5/32.0GB (17%) cpu=7% browser_rss=0.84GB
+[08:17]   [ComfyUI] 
+[08:17]   [ComfyUI] model.pt:  66%|██████▌   | 872M/1.32G [00:11<00:04, 92.3MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:17]   [ComfyUI] 
+[08:17]   [ComfyUI] model.pt:  81%|████████  | 1.07G/1.32G [00:12<00:01, 132MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:17]   [ComfyUI] 
+[08:17]   [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 197MB/s][SubprocessWorker] callback 'report_progress' from call_id=1
+[08:18]   [ComfyUI] 
+[08:18]   [ComfyUI] model.pt: 100%|██████████| 1.32G/1.32G [00:12<00:00, 104MB/s]
+[08:18]   [ComfyUI] [SubprocessWorker] got response: ok
+[08:18]   [ComfyUI] [comfy-env] DownloadAndLoadMoGe2Model done (16.27s): result: NodeOutput
+[08:18]   [ComfyUI] [VRAM] After DownloadAndLoadMoGe2Model: 8837 / 24124 MB
+[08:18]   [ComfyUI] [comfy-env] Running MoGe2Inference: resolution_level: 9, num_tokens: 0, fov_x_deg: 0.0, force_projection: True, apply_mask: True, moge_model: dict, images: torch.float32 [1,1000,1500,3] cpu
+[08:18]   [ComfyUI] [VRAM] Before MoGe2Inference: 8837 / 24124 MB
+[08:18]   [ComfyUI] [SubprocessWorker] call_method: nodes.nodes_inference.MoGe2Inference.EXECUTE_NORMALIZED
+[08:18]   [ComfyUI] [SubprocessWorker] acquired lock, ensuring started...
+[08:18]   [ComfyUI] [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
+[08:18]   [ComfyUI] [ComfyUI-MoGe2] Health check: ok
+[08:18]   [ComfyUI] [SubprocessWorker] worker started/confirmed
+[08:18]   [ComfyUI] [comfy-env] PRE-SERIALIZE 'images' shape: torch.Size([1, 1000, 1500, 3])
+[08:18]   [ComfyUI] [SubprocessWorker] serializing kwargs to shm...
+[08:18]   [ComfyUI] [SubprocessWorker] created 0 shm blocks
+[08:18]   [ComfyUI] [SubprocessWorker] sending request via socket...
+[08:18]   [ComfyUI] [SubprocessWorker] call_id=2 sending call_method
+[08:18]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] _from_shm got dict with keys: ['__type__', 'strategy', 'parent_pid', 'fd', 'storage_size']
+[08:18]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZE TensorRef: tensor_size=[1, 1000, 1500, 3]
+[08:18]   [ComfyUI] [worker:ComfyUI-MoGe2] [comfy-env] DESERIALIZED tensor shape: torch.Size([1, 1000, 1500, 3])
+[08:18]   Frame 7 saved (frame_006.jpg, t=16.6s)
+[08:18]   [capture-periodic] freeze=3ms shot=223ms unfreeze=4ms saved=True
+[08:18]   [ComfyUI] [worker:ComfyUI-MoGe2] WARNING: No comfy kitchen, using old apply_rope functions.
+[08:20]   [capture-loop] iter=150 t=18.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=3 ram=6.7/31.2GB (22%) swap=5.5/32.0GB (17%) cpu=9% browser_rss=0.85GB
+[08:20]   Frame 8 saved (frame_007.jpg, t=18.9s)
+[08:20]   [capture-periodic] freeze=3ms shot=212ms unfreeze=3ms saved=True
+[08:26]   [capture-loop] iter=200 t=24.6s state={'complete': False, 'error': None, 'executedCount': 0, 'wsState': 1} eval_ms=4 ram=7.7/31.2GB (25%) swap=5.5/32.0GB (17%) cpu=8% browser_rss=0.77GB
+[08:29]   [ComfyUI] [SubprocessWorker] callback 'request_vram_budget' from call_id=2
+[08:29]   [ComfyUI] [comfy-env] VRAM request: 0.66GB, free before eviction: 16.03GB
+[08:29]   [ComfyUI] [comfy-env] VRAM after eviction: 16.03GB
+[08:29]   [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +208MB (now 208MB) reserved=224MB peak=208MB
+[08:30]   [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] +482MB (now 690MB) reserved=1472MB peak=944MB
+[08:30]   [ComfyUI] [SubprocessWorker] callback 'report_progress' from call_id=2
+[08:30]   [ComfyUI] [SubprocessWorker] got response: ok
+[08:30]   [ComfyUI] [comfy-env] Created 1 model patchers: ['MoGeWrapper_1']
+[08:30]   [ComfyUI] [comfy-env] MoGe2Inference done (12.16s): result: NodeOutput
+[08:30]   [ComfyUI] [VRAM] After MoGe2Inference: 10427 / 24124 MB
+[08:30]   [ComfyUI] [VRAM] Loaded: SubprocessModel (631 MB)
+[08:30]   Node executed (1 total), capturing...
+[08:30]   [ComfyUI] Prompt executed in 28.75 seconds
+[08:31]   Frame 9 saved (frame_008.jpg, t=29.3s)
+[08:31]   [capture-node] freeze=4ms shot=255ms unfreeze=13ms saved=True
+[08:31]   Node executed (2 total), capturing...
+[08:31]   Frame 10 saved (frame_009.jpg, t=29.9s)
+[08:31]   [capture-node] freeze=4ms shot=251ms unfreeze=0ms saved=True
+[08:31]   Execution complete (t=29.9s)
+[08:31]   Captured 10 unique frames over 30.27s
+[08:31]   [debug] iframes: 0
+[08:31]   [timing] trigger_3d_previews: 0.0s
+[08:34]   Saved high-quality screenshot: simple_executed.png
+[08:34]   [timing] final_screenshot: 0.6s
+[08:34]   [ComfyUI] [comfy-env] [VRAM] Before offload 'MoGeWrapper_1' (631 MB) -> cpu: 10427 / 24124 MB
+[08:34]   [ComfyUI] [ComfyUI-MoGe2] Health check: ping (timeout=5.0s)...
+[08:34]   [ComfyUI] [ComfyUI-MoGe2] Health check: ok
+[08:34]   [ComfyUI] [SubprocessWorker] call_id=3 sending model_to_device
+[08:34]   [ComfyUI] [worker:ComfyUI-MoGe2] [VRAM] -340MB (now 350MB) reserved=1472MB peak=944MB
+[08:34] Results saved to /logs/MoGe2-1311/dev/linux-gpu/results.json
+[08:34] Model report: 4 files, 1.2 GB -> /logs/MoGe2-1311/dev/linux-gpu/models.json
+[08:34] Saved: /logs/MoGe2-1311/dev/linux-gpu/index.html
+[08:34] [EXECUTION] PASSED
+[08:34] 
 linux: PASSED
-[05:24] Stopping ComfyUI server...
+[08:34] Stopping ComfyUI server...
