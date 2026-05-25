@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-MoGe2"
 description = "Warning, uses experimental package `comfy-env` to attempt a one click isolated install. Will download and use pixi package manager. ComfyUI nodes for MoGe-2: monocular metric geometry estimation (depth, points, normals, intrinsics) from Microsoft Research (CVPR'25 Oral)."
-version = "0.1.0"
+version = "0.1.1"
 license = {file = "LICENSE"}
 
 [project.urls]
