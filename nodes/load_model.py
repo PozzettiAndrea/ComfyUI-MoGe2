@@ -173,7 +173,7 @@ class DownloadAndLoadMoGe2Model(io.ComfyNode):
                 ),
             ],
             outputs=[
-                io.Custom("MOGE2_MODEL").Output(display_name="moge_model"),
+                io.Custom("MOGE2_MODEL").Output(display_name="moge2_model"),
             ],
         )
 

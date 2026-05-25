@@ -59,7 +59,7 @@ class MoGe2Inference(io.ComfyNode):
                 "Set fov_x > 0 to constrain inference with a known horizontal FoV; leave at 0 to estimate it."
             ),
             inputs=[
-                io.Custom("MOGE2_MODEL").Input("moge_model"),
+                io.Custom("MOGE2_MODEL").Input("moge2_model"),
                 io.Image.Input("images"),
                 io.Int.Input(
                     "resolution_level", default=9, min=0, max=9,
@@ -100,13 +100,13 @@ class MoGe2Inference(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, moge_model, images,
+    def execute(cls, moge2_model, images,
                 resolution_level=9, num_tokens=0, fov_x_deg=0.0,
                 force_projection=True, apply_mask=True):
         from .load_model import _get_or_build_moge_model
 
         device = _mm().get_torch_device()
-        patcher = _get_or_build_moge_model(moge_model)
+        patcher = _get_or_build_moge_model(moge2_model)
         dtype = patcher.model_options["moge_dtype"]
         capabilities = patcher.model_options["moge_capabilities"]
 
