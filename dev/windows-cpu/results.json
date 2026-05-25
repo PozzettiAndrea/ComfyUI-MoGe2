@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-05-19T17:09:02.057319+00:00",
+  "timestamp": "2026-05-25T19:27:46.925941+00:00",
   "platform": "windows",
   "hardware": {
-    "os": "Windows-2025Server-10.0.26100-SP0",
-    "cpu": "AMD64 Family 25 Model 17 Stepping 1, AuthenticAMD"
+    "os": "Windows-10-10.0.26100-SP0",
+    "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
   },
-  "commit_hash": "fa359f2024ef95caa44e3d0b2229864aad5ffd0b",
-  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/26109010971",
-  "success": true,
+  "commit_hash": "6ef48db2c09cce4003571a6f6c8611d91b700da1",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/26416336895",
+  "success": false,
   "summary": {
     "total": 1,
-    "passed": 1,
-    "failed": 0
+    "passed": 0,
+    "failed": 1
   },
   "workflows": [
     {
       "name": "simple",
-      "status": "pass",
-      "duration_seconds": 93.13,
-      "error": null,
+      "status": "fail",
+      "duration_seconds": 8.79,
+      "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"3\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"moge2_model\",\n        \"extra_info\": {\n          \"input_name\": \"moge2_model\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"4\",\n      \"5\"\n    ],\n    \"class_type\": \"MoGe2Inference\"\n  }\n}",
       "hardware": {
-        "os": "Windows-2025Server-10.0.26100-SP0",
-        "cpu": "AMD64 Family 25 Model 17 Stepping 1, AuthenticAMD"
+        "os": "Windows-10-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "ram": {
-          "peak": 2.97,
-          "avg": 1.77
+          "peak": 0.51,
+          "avg": 0.51
         },
         "total_ram_gb": 16.0,
-        "samples": 92
+        "samples": 9
       }
     }
   ]
