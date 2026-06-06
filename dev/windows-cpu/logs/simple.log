@@ -10,24 +10,6 @@ Capturing execution frames: simple.json
   [ComfyUI] [32m[INFO][0m     Inputs: {"image": "house_indoor.jpg"}
   [ComfyUI] [32m[INFO][0m   Node 2: DownloadAndLoadMoGe2Model
   [ComfyUI] [32m[INFO][0m     Inputs: {"model": "moge-2-vitl-normal.pt", "precision": "auto", "attention": "auto"}
-  [ComfyUI] [32m[INFO][0m   Node 3: MoGe2Inference
-  [ComfyUI] [32m[INFO][0m     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "images": ["1", 0], "moge_model": ["2", 0]}
-  [ComfyUI] [32m[INFO][0m   Node 4: PreviewImage
-  [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 0]}
-  [ComfyUI] [32m[INFO][0m   Node 5: PreviewImage
-  [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 2]}
-  [ComfyUI] [32m[INFO][0m Generated prompt_id: 21b1409e-673a-468a-9f2d-6d38b587a9c6
-  [ComfyUI] [32m[INFO][0m Calling execution.validate_prompt()...
-  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 4:
-  [ComfyUI] [1m[31m[ERROR][0m * MoGe2Inference 3:
-  [ComfyUI] [1m[31m[ERROR][0m   - Required input is missing: moge2_model
-  [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
-  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 5:
-  [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
-  [ComfyUI] [32m[INFO][0m Validation result: valid=False
-  [ComfyUI] [32m[INFO][0m   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-  [ComfyUI] [32m[INFO][0m   Node errors: {"3": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "moge2_model", "extra_info": {"input_name": "moge2_model"}}], "dependent_outputs": ["4", "5"], "class_type": "MoGe2Inference"}}
-  [ComfyUI] [32m[INFO][0m === Validation FAILED ===
   Validation failed: Prompt outputs failed validation
 Node errors:
 {
@@ -49,6 +31,7 @@ Node errors:
     "class_type": "MoGe2Inference"
   }
 }
+  [ComfyUI] [32m[INFO][0m   Node 3: MoGe2Inference
     Status: FAILED
     Error: Workflow validation failed
     Details: Prompt outputs failed validation
@@ -72,3 +55,20 @@ Node errors:
     "class_type": "MoGe2Inference"
   }
 }
+  [ComfyUI] [32m[INFO][0m     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "images": ["1", 0], "moge_model": ["2", 0]}
+  [ComfyUI] [32m[INFO][0m   Node 4: PreviewImage
+  [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 0]}
+  [ComfyUI] [32m[INFO][0m   Node 5: PreviewImage
+  [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 2]}
+  [ComfyUI] [32m[INFO][0m Generated prompt_id: 930fd7d3-4570-4517-a0f8-a587210f8182
+  [ComfyUI] [32m[INFO][0m Calling execution.validate_prompt()...
+  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 4:
+  [ComfyUI] [1m[31m[ERROR][0m * MoGe2Inference 3:
+  [ComfyUI] [1m[31m[ERROR][0m   - Required input is missing: moge2_model
+  [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
+  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 5:
+  [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
+  [ComfyUI] [32m[INFO][0m Validation result: valid=False
+  [ComfyUI] [32m[INFO][0m   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+  [ComfyUI] [32m[INFO][0m   Node errors: {"3": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "moge2_model", "extra_info": {"input_name": "moge2_model"}}], "dependent_outputs": ["4", "5"], "class_type": "MoGe2Inference"}}
+  [ComfyUI] [32m[INFO][0m === Validation FAILED ===
