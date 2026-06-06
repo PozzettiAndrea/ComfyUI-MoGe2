@@ -28,13 +28,14 @@ Node errors:
       }
     ],
     "dependent_outputs": [
-      "4",
-      "5"
+      "5",
+      "4"
     ],
     "class_type": "MoGe2Inference"
   }
 }
   [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 0]}
+  [ComfyUI] [32m[INFO][0m   Node 5: PreviewImage
     Status: FAILED
     Error: Workflow validation failed
     Details: Prompt outputs failed validation
@@ -52,23 +53,22 @@ Node errors:
       }
     ],
     "dependent_outputs": [
-      "4",
-      "5"
+      "5",
+      "4"
     ],
     "class_type": "MoGe2Inference"
   }
 }
-  [ComfyUI] [32m[INFO][0m   Node 5: PreviewImage
   [ComfyUI] [32m[INFO][0m     Inputs: {"images": ["3", 2]}
-  [ComfyUI] [32m[INFO][0m Generated prompt_id: d593ec4f-dd58-41d1-990b-2bda6b2b0f72
+  [ComfyUI] [32m[INFO][0m Generated prompt_id: 8a1190a4-0481-4fdb-8f10-c0c08696ad6a
   [ComfyUI] [32m[INFO][0m Calling execution.validate_prompt()...
-  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 4:
+  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 5:
   [ComfyUI] [1m[31m[ERROR][0m * MoGe2Inference 3:
   [ComfyUI] [1m[31m[ERROR][0m   - Required input is missing: moge2_model
   [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
-  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 5:
+  [ComfyUI] [1m[31m[ERROR][0m Failed to validate prompt for output 4:
   [ComfyUI] [1m[31m[ERROR][0m Output will be ignored
   [ComfyUI] [32m[INFO][0m Validation result: valid=False
   [ComfyUI] [32m[INFO][0m   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-  [ComfyUI] [32m[INFO][0m   Node errors: {"3": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "moge2_model", "extra_info": {"input_name": "moge2_model"}}], "dependent_outputs": ["4", "5"], "class_type": "MoGe2Inference"}}
+  [ComfyUI] [32m[INFO][0m   Node errors: {"3": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "moge2_model", "extra_info": {"input_name": "moge2_model"}}], "dependent_outputs": ["5", "4"], "class_type": "MoGe2Inference"}}
   [ComfyUI] [32m[INFO][0m === Validation FAILED ===
