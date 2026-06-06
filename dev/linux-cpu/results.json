@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-25T19:24:40.295732+00:00",
+  "timestamp": "2026-06-06T23:37:59.847473+00:00",
   "platform": "linux",
   "hardware": {
-    "os": "Linux-6.17.0-1013-azure-x86_64-with-glibc2.39",
+    "os": "Linux-6.17.0-1015-azure-x86_64-with-glibc2.39",
     "cpu": "AMD EPYC 7763 64-Core Processor"
   },
   "commit_hash": "6ef48db2c09cce4003571a6f6c8611d91b700da1",
-  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/26416335729",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/27076985721",
   "success": false,
   "summary": {
     "total": 1,
@@ -17,10 +17,10 @@
     {
       "name": "simple",
       "status": "fail",
-      "duration_seconds": 6.16,
-      "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"3\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"moge2_model\",\n        \"extra_info\": {\n          \"input_name\": \"moge2_model\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"5\",\n      \"4\"\n    ],\n    \"class_type\": \"MoGe2Inference\"\n  }\n}",
+      "duration_seconds": 6.1,
+      "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"3\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"moge2_model\",\n        \"extra_info\": {\n          \"input_name\": \"moge2_model\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"4\",\n      \"5\"\n    ],\n    \"class_type\": \"MoGe2Inference\"\n  }\n}",
       "hardware": {
-        "os": "Linux-6.17.0-1013-azure-x86_64-with-glibc2.39",
+        "os": "Linux-6.17.0-1015-azure-x86_64-with-glibc2.39",
         "cpu": "AMD EPYC 7763 64-Core Processor"
       },
       "resources": {
