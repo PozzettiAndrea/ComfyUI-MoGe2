@@ -1,8 +1,8 @@
+  [ComfyUI] [32m[INFO][0m Using RAM pressure cache.
 Capturing execution frames: simple.json
+  [ComfyUI] [32m[INFO][0m Using RAM pressure cache.
   Frame 1 saved (frame_000.jpg, t=0.0s)
   Validating workflow...
-  [ComfyUI] === /validate endpoint called ===
-  [ComfyUI] Received JSON with keys: ['prompt']
   Validation failed: Prompt outputs failed validation
 Node errors:
 {
@@ -24,7 +24,6 @@ Node errors:
     "class_type": "MoGe2Inference"
   }
 }
-  [ComfyUI] Prompt has 5 nodes
     Status: FAILED
     Error: Workflow validation failed
     Details: Prompt outputs failed validation
@@ -48,25 +47,3 @@ Node errors:
     "class_type": "MoGe2Inference"
   }
 }
-  [ComfyUI]   Node 1: LoadImage
-  [ComfyUI]     Inputs: {"image": "house_indoor.jpg"}
-  [ComfyUI]   Node 2: DownloadAndLoadMoGe2Model
-  [ComfyUI]     Inputs: {"model": "moge-2-vitl-normal.pt", "precision": "auto", "attention": "auto"}
-  [ComfyUI]   Node 3: MoGe2Inference
-  [ComfyUI]     Inputs: {"resolution_level": 9, "num_tokens": 0, "fov_x_deg": 0, "force_projection": true, "apply_mask": true, "images": ["1", 0], "moge_model": ["2", 0]}
-  [ComfyUI]   Node 4: PreviewImage
-  [ComfyUI]     Inputs: {"images": ["3", 0]}
-  [ComfyUI]   Node 5: PreviewImage
-  [ComfyUI]     Inputs: {"images": ["3", 2]}
-  [ComfyUI] Generated prompt_id: 308d122f-66eb-41de-a982-b18090441f36
-  [ComfyUI] Calling execution.validate_prompt()...
-  [ComfyUI] Failed to validate prompt for output 4:
-  [ComfyUI] * MoGe2Inference 3:
-  [ComfyUI]   - Required input is missing: moge2_model
-  [ComfyUI] Output will be ignored
-  [ComfyUI] Failed to validate prompt for output 5:
-  [ComfyUI] Output will be ignored
-  [ComfyUI] Validation result: valid=False
-  [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-  [ComfyUI]   Node errors: {"3": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "moge2_model", "extra_info": {"input_name": "moge2_model"}}], "dependent_outputs": ["4", "5"], "class_type": "MoGe2Inference"}}
-  [ComfyUI] === Validation FAILED ===

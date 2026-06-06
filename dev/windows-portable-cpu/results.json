@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-25T19:32:08.205010+00:00",
+  "timestamp": "2026-06-06T23:45:40.417130+00:00",
   "platform": "windows_portable",
   "hardware": {
     "os": "Windows-2025Server-10.0.26100-SP0",
-    "cpu": "Intel64 Family 6 Model 106 Stepping 6, GenuineIntel"
+    "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
   },
   "commit_hash": "6ef48db2c09cce4003571a6f6c8611d91b700da1",
-  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/26416337675",
+  "run_url": "https://github.com/PozzettiAndrea/comfy-gpu-ci/actions/runs/27076987741",
   "success": false,
   "summary": {
     "total": 1,
@@ -17,19 +17,19 @@
     {
       "name": "simple",
       "status": "fail",
-      "duration_seconds": 8.79,
+      "duration_seconds": 7.26,
       "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"3\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"moge2_model\",\n        \"extra_info\": {\n          \"input_name\": \"moge2_model\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"4\",\n      \"5\"\n    ],\n    \"class_type\": \"MoGe2Inference\"\n  }\n}",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
-        "cpu": "Intel64 Family 6 Model 106 Stepping 6, GenuineIntel"
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "ram": {
-          "peak": 1.39,
-          "avg": 1.39
+          "peak": 1.41,
+          "avg": 1.41
         },
         "total_ram_gb": 16.0,
-        "samples": 9
+        "samples": 8
       }
     }
   ]
